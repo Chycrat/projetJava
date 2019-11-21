@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Ajout de collaborateur</title>
-        <link type="text/css" rel="stylesheet" href="page.css" />
+        <link type="text/css" rel="stylesheet" href="auth/page.css" />
     </head>
     <body>  
     

@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Collaborateurs</title>
-<link rel="stylesheet" type="text/css" href="page.css"/>
+<link rel="stylesheet" type="text/css" href="auth/page.css"/>
 </head>
 
 <body>
