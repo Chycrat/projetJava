@@ -13,10 +13,10 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/acceuil")
+@WebServlet("/accueil")
 public class AccueilServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	public static final String VUE = "/auth/acceuil.jsp";
+	public static final String VUE = "/auth/accueil.jsp";
        
 
 	/**

@@ -4,9 +4,10 @@
 <html>
 
 <head>
-<link rel="stylesheet" type="text/css" href="page.css"/>
+
 <meta charset="ISO-8859-1">
 <title>Header</title>
+<link rel="stylesheet" type="text/css" href="page.css"/>
 </head>
 <body>
 
