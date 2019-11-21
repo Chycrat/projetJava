@@ -47,7 +47,7 @@ public class JpaTacheDao implements TacheDao{
 	@Override
 	public List<Tache> getAllTache() {
 		EntityManager em = this.emf.createEntityManager();
-		Query query = em.createQuery("SELECT p FROM Projet AS p");
+		Query query = em.createQuery("SELECT p FROM tache AS p");
 		List<Tache> tache = (List<Tache>) query.getResultList();
 		return tache;
 	}
