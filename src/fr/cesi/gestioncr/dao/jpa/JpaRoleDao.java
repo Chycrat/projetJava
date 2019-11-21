@@ -47,7 +47,7 @@ public class JpaRoleDao implements RoleDao{
 	@Override
 	public List<Role> getAllRole() {
 		EntityManager em = this.emf.createEntityManager();
-		Query query = em.createQuery("SELECT p FROM role AS p");
+		Query query = em.createQuery("SELECT p FROM Role AS p");
 		List<Role> role = (List<Role>) query.getResultList();
 		return role;
 	}

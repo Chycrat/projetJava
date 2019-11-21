@@ -22,7 +22,7 @@
                 <label for="Password">Mot de passe <span class="requis">*</span></label>
                 <input type="password" id="Password" name="Password" value="" size="20" maxlength="60" />
 				<br/>
-               	<label for="id_role">Service du projet <span class="requis">*</span></label>
+               	<label for="id_role">Role du collaborateur <span class="requis">*</span></label>
                	<select name="id_role">
 	               	<c:forEach items="${roles}" var="ro">
 					        <option value ="${ro.id}">${ro.nom}</option>
