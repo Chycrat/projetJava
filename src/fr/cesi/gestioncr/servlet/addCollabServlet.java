@@ -15,9 +15,8 @@ import fr.cesi.gestioncr.dao.jpa.JpaRoleDao;
 import fr.cesi.gestioncr.entity.Collab;
 import fr.cesi.gestioncr.entity.Role;
 
-/**
- * Servlet implementation class addReunionServlet
- */
+
+
 @WebServlet("/addCollab")
 public class addCollabServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
