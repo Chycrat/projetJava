@@ -8,6 +8,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import fr.cesi.gestioncr.entity.Reunion_Collab;
 import fr.cesi.gestioncr.entity.Tache_Collab;
 import fr.cesi.gestioncr.dao.Tache_CollabDao;
 
@@ -47,7 +48,7 @@ public class JpaTache_CollabDao implements Tache_CollabDao{
 	@Override
 	public List<Tache_Collab> getAllTache_Collab() {
 		EntityManager em = this.emf.createEntityManager();
-		Query query = em.createQuery("SELECT p FROM tache_collab AS p");
+		Query query = em.createQuery("SELECT p FROM Tache_Collab AS p");
 		List<Tache_Collab> tache_collab = (List<Tache_Collab>) query.getResultList();
 		return tache_collab;
 	}
@@ -67,6 +68,30 @@ public class JpaTache_CollabDao implements Tache_CollabDao{
 			em.close();
 		}
 
+	}
+
+	@Override
+	public void updateTache_Collab(Tache_Collab tache_collab) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Tache_Collab> getTache_Collab_by_TacheId(Long id) {
+		EntityManager em = this.emf.createEntityManager();
+		Query query = em.createQuery("SELECT p FROM Tache_Collab AS p WHERE id_tache = ?1");
+		query.setParameter(1, id);
+		List<Tache_Collab> tache_collab = (List<Tache_Collab>) query.getResultList();
+		return tache_collab;
+	}
+
+	@Override
+	public List<Tache_Collab> getAllTache_Collab_by_CollabId(Long id) {
+		EntityManager em = this.emf.createEntityManager();
+		Query query = em.createQuery("SELECT p FROM Tache_Collab AS p WHERE id_collab = ?1");
+		query.setParameter(1, id);
+		List<Tache_Collab> tache_collab = (List<Tache_Collab>) query.getResultList();
+		return tache_collab;
 	}
 
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import fr.cesi.gestioncr.dao.Reunion_CollabDao;
@@ -17,7 +18,7 @@ public class JpaReunion_CollabDao implements Reunion_CollabDao{
 	EntityManagerFactory emf = null;
 
 	public JpaReunion_CollabDao(EntityManagerFactory emf) {
-		this.emf = emf;
+		this.emf = Persistence.createEntityManagerFactory("my-pu");
 	}
 
 	@Override
@@ -46,7 +47,7 @@ public class JpaReunion_CollabDao implements Reunion_CollabDao{
 	@Override
 	public List<Reunion_Collab> getAllReunion_Collab() {
 		EntityManager em = this.emf.createEntityManager();
-		Query query = em.createQuery("SELECT p FROM reunion_collab AS p");
+		Query query = em.createQuery("SELECT p FROM Reunion_Collab AS p");
 		List<Reunion_Collab> reunion_collab = (List<Reunion_Collab>) query.getResultList();
 		return reunion_collab;
 	}
@@ -64,6 +65,30 @@ public class JpaReunion_CollabDao implements Reunion_CollabDao{
 			em.close();
 		}
 
+	}
+
+	@Override
+	public void updateReunion_Collab(Reunion_Collab reunion_collab) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Reunion_Collab> getReunion_Collab_by_ReunionId(Long id) {
+		EntityManager em = this.emf.createEntityManager();
+		Query query = em.createQuery("SELECT p FROM Reunion_Collab AS p WHERE id_reunion = ?1");
+		query.setParameter(1, id);
+		List<Reunion_Collab> reunion_collab = (List<Reunion_Collab>) query.getResultList();
+		return reunion_collab;
+	}
+
+	@Override
+	public List<Reunion_Collab> getAllReunion_Collab_by_CollabId(Long id) {
+		EntityManager em = this.emf.createEntityManager();
+		Query query = em.createQuery("SELECT p FROM Reunion_Collab AS p WHERE id_collab = ?1"); 
+		query.setParameter(1, id);
+		List<Reunion_Collab> reunion_collab = (List<Reunion_Collab>) query.getResultList();
+		return reunion_collab;
 	}
 	
 }
