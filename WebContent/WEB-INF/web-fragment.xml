@@ -21,14 +21,20 @@
 	</servlet>
 	
 	<servlet>
+		<servlet-name>listReunion</servlet-name>
+		<servlet-class>fr.cesi.gestioncr.servlet.listReunionServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet>
 		<servlet-name>addCollab</servlet-name>
 		<servlet-class>fr.cesi.gestioncr.servlet.addCollabServlet
 		</servlet-class>
 	</servlet>
 	
 	<servlet>
-		<servlet-name>Accueil</servlet-name>
-		<servlet-class>fr.cesi.gestioncr.servlet.AcceuilServlet
+		<servlet-name>accueil</servlet-name>
+		<servlet-class>fr.cesi.gestioncr.servlet.AccueilServlet
 		</servlet-class>
 	</servlet>
 	
