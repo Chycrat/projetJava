@@ -1,11 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
         <title>Ajout de collaborateur</title>
-        <link type="text/css" rel="stylesheet" href="page.css" />
+        <link type="text/css" rel="stylesheet" href="auth/page.css" />
     </head>
     <body>  
+    
+		<c:import url="header.jsp" />
         <form method="post" action="addCollab">
             <fieldset>
                 <legend>Création d'un user</legend>
@@ -25,7 +30,7 @@
                	<label for="id_role">Role du collaborateur <span class="requis">*</span></label>
                	<select name="id_role">
 	               	<c:forEach items="${roles}" var="ro">
-					        <option value ="${ro.id}">${ro.nom}</option>
+					        <option value ="${ro.id_role}">${ro.nom_role}</option>
 			        </c:forEach>
 				</select>
 				</br>

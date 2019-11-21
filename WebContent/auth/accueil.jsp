@@ -7,10 +7,11 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Accueil</title>	
-		<link rel="stylesheet" type="text/css" href="page.css"/>
+		<link rel="stylesheet" type="text/css" href="auth/page.css"/>
 	</head>
 	<body>
 		<c:import url="header.jsp" />
+
 		TEST
 		
 	</body>

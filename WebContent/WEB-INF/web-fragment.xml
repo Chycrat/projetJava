@@ -21,21 +21,46 @@
 	</servlet>
 	
 	<servlet>
+		<servlet-name>listReunion</servlet-name>
+		<servlet-class>fr.cesi.gestioncr.servlet.listReunionServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet>
 		<servlet-name>addCollab</servlet-name>
 		<servlet-class>fr.cesi.gestioncr.servlet.addCollabServlet
 		</servlet-class>
 	</servlet>
 	
 	<servlet>
-		<servlet-name>Accueil</servlet-name>
-		<servlet-class>fr.cesi.gestioncr.servlet.AcceuilServlet
+		<servlet-name>accueil</servlet-name>
+		<servlet-class>fr.cesi.gestioncr.servlet.AccueilServlet
 		</servlet-class>
 	</servlet>
 	
 	<servlet>
 		<servlet-name>removeCollab</servlet-name>
-		<servlet-class>fr.cesi.gestioncr.servlet.removeCollab
+		<servlet-class>fr.cesi.gestioncr.servlet.removeCollabServlet
 		</servlet-class>
 	</servlet>
+	
+	<servlet>
+		<servlet-name>addRole</servlet-name>
+		<servlet-class>fr.cesi.gestioncr.servlet.addRoleServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>removeRole</servlet-name>
+		<servlet-class>fr.cesi.gestioncr.servlet.removeRoleServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>listRole</servlet-name>
+		<servlet-class>fr.cesi.gestioncr.servlet.listRoleServlet
+		</servlet-class>
+	</servlet>
+	
 	
 </web-fragment>
