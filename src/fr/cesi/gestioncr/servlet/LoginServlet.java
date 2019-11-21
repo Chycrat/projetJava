@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import fr.cesi.gestioncr.dao.jpa.JpaCollabDao;
+
 
 /**
  * Servlet implementation class LoginServlet
@@ -41,12 +43,12 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		HttpSession session = request.getSession();
 		
-		/*DAO_utils util = new DAO_utils();
+		JpaCollabDao jpa = new JpaCollabDao(null);
 		
-		boolean existe = util.employee_existe(user, password);*/
+		boolean existe = jpa.Collab_existe(user, password);
 		
 		session.setAttribute("name", user);
-		if(user.equals("admin")) {
+		if(existe == true) {
 			response.sendRedirect(request.getContextPath() + "/accueil"); 
 		}
 		else {
