@@ -50,6 +50,7 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect(request.getContextPath() + "/acceuil"); 
 		}
 		else {
+			request.setAttribute("error", true);
 			doGet(request, response);
 		}
 		
