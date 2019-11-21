@@ -22,8 +22,8 @@ public class Reunion implements Serializable {
 	private String lieu;
 	private String Objectif;
 	private String compte_rendu;
-	@ManyToMany(mappedBy="reunion")
-	private Collection<Collab> collabs;
+//	@ManyToMany(mappedBy="reunion")
+//	private Collection<Collab> collab;
 	public Date getDate() {
 		return date;
 	}
@@ -51,12 +51,12 @@ public class Reunion implements Serializable {
 	public Long getId() {
 		return id;
 	}
-	public Collection<Collab> getCollabs() {
-		return collabs;
-	}
-	public void setCollabs(Collection<Collab> collabs) {
-		this.collabs = collabs;
-	}
+//	public Collection<Collab> getCollabs() {
+//		return collab;
+//	}
+//	public void setCollabs(Collection<Collab> collabs) {
+//		this.collab = collabs;
+//	}
 	
 	
 }
