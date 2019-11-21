@@ -2,15 +2,16 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="page.css"/>
 <head>
 <meta charset="ISO-8859-1">
-<title>Acceuil</title>
-
+<title>Réunions</title>
 <%@ include file="/jsp/header.jsp" %>
 </head>
 <body>
-TEST
-
+	<c:forEach items =${reunions}" var"reunion">
+			
+			
+			
+	</c:forEach>
 </body>
 </html>
