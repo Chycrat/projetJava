@@ -5,12 +5,12 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Connexion</title>
-		<link rel="stylesheet" type="text/css" href="page.css"/>
+		<link rel="stylesheet" type="text/css" href="jsp/page.css"/>
 	</head>
 	 
 	<body>
 		<br><br>
-		<form name="formulaire" method="post" action="/gestionCR/login">
+		<form name="formulaire" method="post" action="login">
 			<div class="form-style-5">
 				<fieldset>
 					<legend><span class="number">1</span>Information de connexion</legend>

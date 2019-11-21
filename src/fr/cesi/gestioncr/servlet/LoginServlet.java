@@ -46,11 +46,12 @@ public class LoginServlet extends HttpServlet {
 		boolean existe = util.employee_existe(user, password);*/
 		
 		session.setAttribute("name", user);
-		/*System.out.println("role id" + role_id)*/
-		
-		/*if(existe == true)*/
-		if(user == "admin") response.sendRedirect(request.getContextPath() + "/auth/acceuil.jsp"); 
-		else response.sendRedirect(request.getContextPath() + "/jsp/login.jsp"); 
+		if(user.equals("admin")) {
+			response.sendRedirect(request.getContextPath() + "/acceuil"); 
+		}
+		else {
+			doGet(request, response);
+		}
 		
 		
 	}
