@@ -7,8 +7,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
-import fr.cesi.gestioncr.entity.Reunion_Collab;
 import fr.cesi.gestioncr.dao.Reunion_CollabDao;
+import fr.cesi.gestioncr.entity.Reunion_Collab;
 
 public class JpaReunion_CollabDao implements Reunion_CollabDao{
 

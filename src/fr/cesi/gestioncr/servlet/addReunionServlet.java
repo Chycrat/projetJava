@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import fr.cesi.gestioncr.dao.jpa.JpaCollabDao;
 import fr.cesi.gestioncr.dao.jpa.JpaReunionDao;
+import fr.cesi.gestioncr.dao.jpa.JpaReunion_CollabDao;
 import fr.cesi.gestioncr.entity.Collab;
 import fr.cesi.gestioncr.entity.Reunion;
 import fr.cesi.gestioncr.entity.Reunion_Collab;
@@ -26,7 +27,7 @@ import fr.cesi.gestioncr.entity.Reunion_Collab;
 public class addReunionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String AJOUT = "/auth/addReunion.jsp";
-	private static final String VUE = "/auth/listeReunion.jsp";
+	private static final String VUE = "listReunion";
 	private EntityManagerFactory emf;
        
     public addReunionServlet() {
@@ -37,12 +38,13 @@ public class addReunionServlet extends HttpServlet {
 		JpaCollabDao myDao = new JpaCollabDao(emf);
 		Collection<Collab> collabs = myDao.getAllCollab();
 		request.setAttribute("collab", collabs);
-		request.getRequestDispatcher(VUE).forward(request, response);
+		this.getServletContext().getRequestDispatcher( AJOUT ).forward( request, response );
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JpaReunionDao jpaReu = new JpaReunionDao(emf);
 		JpaCollabDao jpaCol = new JpaCollabDao(emf);
+		JpaReunion_CollabDao jpaReuCol = new JpaReunion_CollabDao(emf);
 		
 		try {
 			Date dateReu = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("date"));
@@ -51,16 +53,17 @@ public class addReunionServlet extends HttpServlet {
 			Long id_collab = Long.parseLong(request.getParameter("id_collab"));
 			
 			Reunion reunion = new Reunion();
-			Reunion_Collab reunion_c= new Reunion_Collab();
+			Reunion_Collab reunion_collab = new Reunion_Collab();
 			
 			Long id_reunion = reunion.getId_reunion();
 			
 			reunion.setDate(dateReu);
 			reunion.setLieu(lieu);
 			reunion.setObjectif(objectif);
+			reunion_collab.setCollab(jpaCol.findCollabById(id_collab));
+			reunion_collab.setReunion(jpaReu.findReunionById(id_reunion));
 			
-			reunion_c.setCollab(collab);
-			reunion_c.setReunion(jpaReu.findReunionById(id_reunion));
+			this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 			
 		} catch (ParseException e) {
 			e.printStackTrace();
