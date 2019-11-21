@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-fragment>
-	<name>GestionCR</name>
+	<name>gestionCR</name>
 	
 	<servlet>
 		<servlet-name>login</servlet-name>
