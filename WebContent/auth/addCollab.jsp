@@ -27,7 +27,7 @@
                	<label for="id_role">Role du collaborateur <span class="requis">*</span></label>
                	<select name="id_role">
 	               	<c:forEach items="${roles}" var="ro">
-					        <option value ="${ro.id}">${ro.nom}</option>
+					        <option value ="${ro.id_role}">${ro.nom_role}</option>
 			        </c:forEach>
 				</select>
 				</br>
