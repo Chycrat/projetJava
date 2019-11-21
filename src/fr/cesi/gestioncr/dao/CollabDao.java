@@ -5,6 +5,8 @@ import fr.cesi.gestioncr.entity.Collab;
 
 public interface CollabDao {
 	
+	public boolean Collab_existe(String name, String password);
+	
 	public Collab addCollab(Collab collab);
 	
 	public Collab findCollabById(Long id);
