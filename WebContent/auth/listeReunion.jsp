@@ -5,9 +5,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Réunions</title>
-<%@ include file="/jsp/header.jsp" %>
+
 </head>
 <body>
+<%@ include file="header.jsp" %>
 	<c:forEach items =${reunions}" var"reunion">
 			
 			
