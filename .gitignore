@@ -23,6 +23,10 @@
 hs_err_pid*
 /target/
 
-WebContent/META-INF/MANIFEST.MF
-
 .classpath
+
+.DS_Store
+
+.settings/
+
+WebContent/META-INF/MANIFEST.MF
