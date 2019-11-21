@@ -5,12 +5,10 @@ import fr.cesi.gestioncr.entity.Tache;
 
 
 public interface TacheDao {
-
-	//public boolean existRole(String name, String password)
 	
 			public Tache addTache(Tache tache);
 			
-			public Tache findTache(Long id);
+			public Tache findTacheById(Long id);
 			
 			public List<Tache> getAllTache();
 			
