@@ -48,8 +48,8 @@ public class LoginServlet extends HttpServlet {
 		/*System.out.println("role id" + role_id)*/
 		
 		/*if(existe == true)*/
-		if(user == "admin") response.sendRedirect(request.getContextPath() + "/auth/Acceuil.jsp"); 
-		else response.sendRedirect(request.getContextPath() + "/jsp/Login.jsp"); 
+		if(user == "admin") response.sendRedirect(request.getContextPath() + "/auth/acceuil.jsp"); 
+		else response.sendRedirect(request.getContextPath() + "/jsp/login.jsp"); 
 		
 		
 	}

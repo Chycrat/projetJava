@@ -12,7 +12,7 @@
 </head>
  
 <br><br>
-<form name="formulaire" method="post" action="/GestionCR/login">
+<form name="formulaire" method="post" action="/gestionCR/login">
 <div class="form-style-5">
 	<fieldset>
 		<legend><span class="number">1</span>Information de connexion</legend>
