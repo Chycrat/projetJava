@@ -8,6 +8,24 @@
 		</servlet-class>
 	</servlet>
 	
+	<servlet>
+		<servlet-name>listCollab</servlet-name>
+		<servlet-class>fr.cesi.gestioncr.servlet.listCollabServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>addReunion</servlet-name>
+		<servlet-class>fr.cesi.gestioncr.servlet.addReunionServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Accueil</servlet-name>
+		<servlet-class>fr.cesi.gestioncr.servlet.AcceuilServlet
+		</servlet-class>
+	</servlet>
+	
 	
     
 </web-fragment>
