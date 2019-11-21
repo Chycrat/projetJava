@@ -12,12 +12,12 @@
 </head>
  
 <br><br>
-<form name="formulaire" method="post" action="/GestionCR/Login">
+<form name="formulaire" method="post" action="/GestionCR/login">
 <div class="form-style-5">
 	<fieldset>
 		<legend><span class="number">1</span>Information de connexion</legend>
-		<input type="text" name="name" placeholder="Your Name *">
-		<input type="password" name="password" placeholder="Your password * ">
+		<input type="text" name="name" placeholder="Your Name *" required>
+		<input type="password" name="password" placeholder="Your password * " required>
 	</fieldset>
 	<input type="submit" value="Connexion">
 </div>
