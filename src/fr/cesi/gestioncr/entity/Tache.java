@@ -1,12 +1,14 @@
 package fr.cesi.gestioncr.entity;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +21,8 @@ public class Tache implements Serializable {
 	private String nom;
 	private String description;
 	private Date deadline;
+	@ManyToMany(mappedBy="tache")
+	private Collection<Collab> collabs;
 	public String getNom() {
 		return nom;
 	}
@@ -39,6 +43,12 @@ public class Tache implements Serializable {
 	}
 	public Long getId() {
 		return id;
+	}
+	public Collection<Collab> getCollabs() {
+		return collabs;
+	}
+	public void setCollabs(Collection<Collab> collabs) {
+		this.collabs = collabs;
 	}
 	
 	
