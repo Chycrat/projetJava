@@ -36,5 +36,5 @@ public class Tache_Collab implements Serializable {
 	public void setTache(Tache tache) {
 		this.tache = tache;
 	}
-
+	
 }
