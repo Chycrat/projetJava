@@ -12,9 +12,10 @@
 <link rel="stylesheet" type="text/css" href="page.css"/>
 <meta charset="ISO-8859-1">
 <title>Création réunion</title>
- <%@ include file="/jsp/header.jsp" %>
+
 </head>
 <body>
+ <%@ include file="/jsp/header.jsp" %>
 <form name="formulaire" method="post" action="/GestionCR/Addreunion">
 <div class="form-style-5">
 	<fieldset>
