@@ -47,7 +47,7 @@ public class addCollabServlet extends HttpServlet{
 		collab.setLogin(login);
 		collab.setPassword(password);
 		collab.setRole(jpaRole.findRoleById(id_role));
-		
+		jpaCollab.addCollab(collab);
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 			
 	}
