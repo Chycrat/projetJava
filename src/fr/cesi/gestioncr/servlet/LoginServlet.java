@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	public static final String VUE = "/jsp/Login.jsp";
+	public static final String VUE = "/jsp/login.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -49,8 +49,8 @@ public class LoginServlet extends HttpServlet {
 		/*System.out.println("role id" + role_id)*/
 		
 		/*if(existe == true)*/
-		if(user == "admin") response.sendRedirect(request.getContextPath() + "/auth/Acceuil.jsp"); 
-		else response.sendRedirect(request.getContextPath() + "/jsp/Login.jsp"); 
+		if(user == "admin") response.sendRedirect(request.getContextPath() + "/auth/acceuil.jsp"); 
+		else response.sendRedirect(request.getContextPath() + "/jsp/login.jsp"); 
 		
 		
 	}
