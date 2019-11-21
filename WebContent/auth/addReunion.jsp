@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+<%@page import="java.util.List" %>
+<%@page import="java.util.ArrayList" %>
+<%@page import="fr.cesi.gestioncr.entity.Collab" %>    
+<%@page import="fr.cesi.gestioncr.dao.CollabDao" %>   
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +18,18 @@
 <div class="form-style-5">
 	<fieldset>
 		<legend><span class="number">1</span>Création d'une réunion</legend>
-		<input type="number" name="id" placeholder="Cote *" required size="10">
-		<input type="text" name="titre" placeholder="Titre *" required size="50">
-		<input type="text" name="auteur" placeholder="Auteur* " required size="50">
+		<input type="date" name="date" placeholder="Date *">
+		<input type="text" name="objectif" placeholder="Objectif *">
+		<input type="text" name="lieu" placeholder="Objectif *">
+		<select name="collab" multiple>
+			<c:forEach items =${collabs}" var"collab">
+			<option value=${collab.id}> ${collab.nom}</option>
+			
+			
+			</c:forEach>	 
+  		</select>
 	</fieldset>
-	<input type="submit" value="Je termine ma partie d'ajout de livre">
+	<input type="submit" value="Création de la réunion">
 </div>
 </form>
 
