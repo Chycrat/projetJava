@@ -9,7 +9,7 @@
 </head>
 <body>
 	<c:forEach items =${collab}" var"collab">
-			<span class="text"> ${collab.id}</span>
+			<span class="text"> ${collab.id_collab}</span>
 			<span class="text"></span>${collab.prenom}</span>
 			<span class="text"></span>${collab.nom}</span>
 			<span class="text"><${collab.login}</span>

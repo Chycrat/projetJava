@@ -55,7 +55,7 @@ public class JpaReunionDao implements ReunionDao{
 	@Override
 	public void updateReunion(Reunion reunion) {
 		EntityManager em = this.emf.createEntityManager();
-		Long id = reunion.getId();
+		Long id = reunion.getId_reunion();
 		Reunion reu = em.find(Reunion.class, id);
 		reu = em.merge(reunion);
 		EntityTransaction t = em.getTransaction();

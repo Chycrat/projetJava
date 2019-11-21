@@ -1,14 +1,14 @@
 package fr.cesi.gestioncr.entity;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,17 +17,24 @@ public class Tache implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
-	private String nom;
+	private Long id_tache;
+	private String nom_tache;
 	private String description;
 	private Date deadline;
-//	@ManyToMany(mappedBy="tache")
-//	private Collection<Collab> collab;
-	public String getNom() {
-		return nom;
+	@OneToOne
+	@JoinColumn(name="id_reunion")
+	private Reunion reunion;
+	public Long getId_tache() {
+		return id_tache;
 	}
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setId_tache(Long id_tache) {
+		this.id_tache = id_tache;
+	}
+	public String getNom_tache() {
+		return nom_tache;
+	}
+	public void setNom_tache(String nom_tache) {
+		this.nom_tache = nom_tache;
 	}
 	public String getDescription() {
 		return description;
@@ -41,15 +48,13 @@ public class Tache implements Serializable {
 	public void setDeadline(Date deadline) {
 		this.deadline = deadline;
 	}
-	public Long getId() {
-		return id;
+	public Reunion getReunion() {
+		return reunion;
 	}
-//	public Collection<Collab> getCollabs() {
-//		return collab;
-//	}
-//	public void setCollabs(Collection<Collab> collabs) {
-//		this.collab = collabs;
-//	}
+	public void setReunion(Reunion reunion) {
+		this.reunion = reunion;
+	}
 	
+
 	
 }
