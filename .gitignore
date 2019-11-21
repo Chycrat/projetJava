@@ -26,3 +26,5 @@ hs_err_pid*
 WebContent/META-INF/MANIFEST.MF
 
 .classpath
+
+bin
