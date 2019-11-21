@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	version="2.0">
+	<persistence-unit name="my-pu"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>
+			org.hibernate.ejb.HibernatePersistence
+		</provider>
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.user" value="cesi" />
+			<property name="javax.persistence.jdbc.password"
+				value="cesi" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://10.173.128.135:3306/gestioncr" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+		</properties>
+	</persistence-unit>
+</persistence>
