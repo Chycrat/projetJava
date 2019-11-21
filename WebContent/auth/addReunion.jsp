@@ -9,19 +9,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="page.css"/>
+<link rel="stylesheet" type="text/css" href="auth/page.css"/>
 <meta charset="ISO-8859-1">
 <title>Création réunion</title>
 
 </head>
 <body>
 
-	<ul>
-		<li> <img src="https://cdn1.iconfinder.com/data/icons/business-and-finance-20/200/vector_65_02-256.png" alt="Team pic" width="5%"> </li>
-		<li> <a href="http://localhost:8080/gestionCR/listCollab">Liste des collaborateurs </a> <li>
-		<li> <a href="http://localhost:8080/gestionCR/addReunion">Création réunion</a> <li>
-		<li> <a href="http://localhost:8080/gestionCR/listeReunion">Liste réunion</a> <li>
-	</ul>
+	<c:import url="header.jsp" />
 	<form name="formulaire" method="post" action="/GestionCR/Addreunion">
 		<div class="form-style-5">
 			<fieldset>
