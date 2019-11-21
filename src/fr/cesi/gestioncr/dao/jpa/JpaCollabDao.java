@@ -1,10 +1,11 @@
 package fr.cesi.gestioncr.dao.jpa;
 
-import java.util.List;
+import java.util.Collection;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import fr.cesi.gestioncr.dao.CollabDao;
@@ -17,7 +18,7 @@ public class JpaCollabDao implements CollabDao {
 	EntityManagerFactory emf = null;
 
 	public JpaCollabDao(EntityManagerFactory emf) {
-		this.emf = emf;
+		this.emf = Persistence.createEntityManagerFactory("my-pu");
 	}
 	
 	@Override
@@ -63,10 +64,10 @@ public class JpaCollabDao implements CollabDao {
 	}
 
 	@Override
-	public List<Collab> getAllCollab() {
+	public Collection<Collab> getAllCollab() {
 		EntityManager em = this.emf.createEntityManager();
-		Query query = em.createQuery("SELECT p FROM Projet AS p");
-		List<Collab> collab = (List<Collab>) query.getResultList();
+		Query query = em.createQuery("SELECT c FROM Collab AS c");
+		Collection<Collab> collab = (Collection<Collab>) query.getResultList();
 		return collab;
 	}
 

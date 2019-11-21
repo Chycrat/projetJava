@@ -24,10 +24,10 @@ public class Collab implements Serializable {
 	private String prenom;
 	private String login;
 	private String password;
-	@ManyToMany(mappedBy="collab")
-	private Collection<Tache> taches;
-	@ManyToMany(mappedBy="collab")
-	private Collection<Reunion> reunions;
+//	@ManyToMany(mappedBy="collab")
+//	private Collection<Tache> tache;
+//	@ManyToMany(mappedBy="collab")
+//	private Collection<Reunion> reunion;
 	@ManyToOne
 	@JoinColumn(name="role_id")
 	private Role role;
@@ -59,12 +59,12 @@ public class Collab implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Collection<Tache> getTaches() {
-		return taches;
-	}
-	public void setTaches(Collection<Tache> taches) {
-		this.taches = taches;
-	}
+//	public Collection<Tache> getTaches() {
+//		return tache;
+//	}
+//	public void setTaches(Collection<Tache> taches) {
+//		this.tache = taches;
+//	}
 	public Role getRole() {
 		return role;
 	}
