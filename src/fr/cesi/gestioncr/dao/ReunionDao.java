@@ -4,10 +4,10 @@ import java.util.List;
 import fr.cesi.gestioncr.entity.Reunion;
 
 public interface ReunionDao {
-
+	
 	public Reunion addReunion(Reunion reunion);
 	
-	public Reunion findReunion(Long id);
+	public Reunion findReunionById(Long id);
 	
 	public List<Reunion> getAllReunion();
 	
