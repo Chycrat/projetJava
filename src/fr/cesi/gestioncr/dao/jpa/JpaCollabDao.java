@@ -26,7 +26,7 @@ public class JpaCollabDao implements CollabDao {
 	{
 		EntityManager em = factory.createEntityManager();
 	
-		Query query = em.createQuery("SELECT count(id) FROM employee where nom = ?1 and pass = ?2");
+		Query query = em.createQuery("SELECT count(id) FROM collab where nom = ?1 and pass = ?2");
 		
 		query.setParameter(1, name);
 		query.setParameter(2, password);

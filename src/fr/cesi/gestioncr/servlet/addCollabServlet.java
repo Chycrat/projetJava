@@ -1,9 +1,6 @@
 package fr.cesi.gestioncr.servlet;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManagerFactory;
@@ -14,10 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.cesi.gestioncr.dao.jpa.JpaCollabDao;
-import fr.cesi.gestioncr.dao.jpa.JpaReunionDao;
 import fr.cesi.gestioncr.dao.jpa.JpaRoleDao;
 import fr.cesi.gestioncr.entity.Collab;
-import fr.cesi.gestioncr.entity.Reunion;
 import fr.cesi.gestioncr.entity.Role;
 
 /**

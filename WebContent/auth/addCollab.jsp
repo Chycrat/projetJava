@@ -2,11 +2,11 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Ajout Employé</title>
+        <title>Ajout de collaborateur</title>
         <link type="text/css" rel="stylesheet" href="page.css" />
     </head>
     <body>  
-        <form method="post" action="addEmploye">
+        <form method="post" action="addCollab">
             <fieldset>
                 <legend>Création d'un user</legend>
 
@@ -33,6 +33,6 @@
                 <br />
             </fieldset>
         </form>
-        <a href="http://localhost:8080/projetGestion/listProjet">Retour</a>
+        <a href="http://localhost:8080/gestionCR/listCollab">Retour</a>
     </body>
 </html>
