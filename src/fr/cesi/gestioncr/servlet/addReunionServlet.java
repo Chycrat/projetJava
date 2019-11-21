@@ -21,8 +21,8 @@ import fr.cesi.gestioncr.entity.Reunion;
 @WebServlet("/addReunion")
 public class addReunionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String AJOUT = "/addReunion.jsp";
-	private static final String VUE = "/listReunion.jsp";
+	private static final String AJOUT = "/auth/addReunion.jsp";
+	private static final String VUE = "/auth/listeReunion.jsp";
 	private EntityManagerFactory emf;
        
     /**
@@ -35,7 +35,7 @@ public class addReunionServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		this.getServletContext().getRequestDispatcher( AJOUT ).forward( request, response );
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

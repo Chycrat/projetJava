@@ -24,6 +24,7 @@ hs_err_pid*
 /target/
 
 .classpath
+<<<<<<< HEAD
 =======
 .classpath
 
@@ -33,3 +34,11 @@ hs_err_pid*
 
 WebContent/META-INF/MANIFEST.MF
 bin
+=======
+
+bin
+
+.settings/.jsdtscope
+
+.settings/
+>>>>>>> Romain

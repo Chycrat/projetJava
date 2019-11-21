@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="page.css"/>
 <meta charset="ISO-8859-1">
 <title>Création réunion</title>
  <%@ include file="/jsp/header.jsp" %>
@@ -20,7 +21,7 @@
 		<legend><span class="number">1</span>Création d'une réunion</legend>
 		<input type="date" name="date" placeholder="Date *">
 		<input type="text" name="objectif" placeholder="Objectif *">
-		<input type="text" name="lieu" placeholder="Objectif *">
+		<input type="text" name="lieu" placeholder="Lieu *">
 		<select name="collab" multiple>
 			<c:forEach items =${collabs}" var"collab">
 			<option value=${collab.id}> ${collab.nom}</option>
