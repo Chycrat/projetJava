@@ -15,7 +15,7 @@
 
 </head>
 <body>
- <%@ include file="/jsp/header.jsp" %>
+ <%@ include file="header.jsp" %>
 <form name="formulaire" method="post" action="/GestionCR/Addreunion">
 <div class="form-style-5">
 	<fieldset>

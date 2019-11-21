@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<%@ include file="/jsp/header.jsp" %>
+<%@ include file="header.jsp" %>
 	<c:forEach items =${reunions}" var"reunion">
 			
 			

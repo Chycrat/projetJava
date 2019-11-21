@@ -6,17 +6,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Collaborateurs</title>
-
+<link rel="stylesheet" type="text/css" href="page.css"/>
 </head>
+
 <body>
-	<c:forEach items ="${collab}" var"col">
-			<li><span class="text"> ${col.id_collab}</span></li>
-			<li><span class="text"><${col.prenom}</span></li>
-			<li><span class="text"><${col.nom}</span></li>
-			<li><span class="text"><${col.login}</span></li>
+	<c:forEach items ="${collab}" var="col">
+			${col.id_collab} - ${col.nom} - ${col.prenom} - ${col.login}
+			<a href="http://localhost:8080/gestionCR/removeCollab?id=${col.id_collab}">Supprimer collaborateur</a><br>
 	</c:forEach>
 	
-	<li> <a href="http://localhost:8080/gestionCR/addCollab">Liste réunion</a> <li>
+	<li> <a href="http://localhost:8080/gestionCR/addCollab">Ajouter un collaborateur</a> <li>
+	
 	
 </body>
 </html>
