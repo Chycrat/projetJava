@@ -1,4 +1,4 @@
-package fr.cesi.gestion.servlet;
+package fr.cesi.gestioncr.servlet;
 
 import java.io.IOException;
 
