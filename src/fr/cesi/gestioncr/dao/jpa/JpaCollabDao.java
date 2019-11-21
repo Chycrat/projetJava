@@ -19,7 +19,26 @@ public class JpaCollabDao implements CollabDao {
 	public JpaCollabDao(EntityManagerFactory emf) {
 		this.emf = emf;
 	}
-
+	
+	@Override
+	public boolean Collab_existe(String name, String password)
+	{
+		EntityManager em = factory.createEntityManager();
+	
+		Query query = em.createQuery("SELECT count(id) FROM employee where nom = ?1 and pass = ?2");
+		
+		query.setParameter(1, name);
+		query.setParameter(2, password);
+		
+		long existe = (long) query.getSingleResult();
+		
+		em.close();
+		if(existe == 1) return(true);
+	
+		return(false);
+		
+	}
+	
 	@Override
 	public Collab addCollab(Collab collab) {
 		EntityManager em = this.emf.createEntityManager();
