@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/Login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	public static final String VUE = "/jsp/Login.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -29,7 +30,7 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
 	}
 
 	/**
