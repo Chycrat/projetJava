@@ -14,10 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.cesi.gestioncr.dao.jpa.JpaCollabDao;
-import fr.cesi.gestioncr.dao.jpa.JpaReunionDao;
 import fr.cesi.gestioncr.dao.jpa.JpaRoleDao;
 import fr.cesi.gestioncr.entity.Collab;
-import fr.cesi.gestioncr.entity.Reunion;
 import fr.cesi.gestioncr.entity.Role;
 
 /**
