@@ -24,8 +24,8 @@
 		<input type="text" name="objectif" placeholder="Objectif *">
 		<input type="text" name="lieu" placeholder="Lieu *">
 		<select name="collab" multiple>
-			<c:forEach items =${collabs}" var"collab">
-			<option value=${collab.id}> ${collab.nom}</option>
+			<c:forEach items =${collab}" var"col">
+			<option value=${col.id}> ${col.nom}</option>
 			
 			
 			</c:forEach>	 
