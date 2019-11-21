@@ -14,16 +14,20 @@ public class Role implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
-	private String nom;
-	public String getNom() {
-		return nom;
+	private Long id_role;
+	private String nom_role;
+	public Long getId_role() {
+		return id_role;
 	}
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setId_role(Long id_role) {
+		this.id_role = id_role;
 	}
-	public Long getId() {
-		return id;
+	public String getNom_role() {
+		return nom_role;
 	}
+	public void setNom_role(String nom_role) {
+		this.nom_role = nom_role;
+	}
+
 
 }

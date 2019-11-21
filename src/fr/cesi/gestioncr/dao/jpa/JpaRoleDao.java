@@ -55,7 +55,7 @@ public class JpaRoleDao implements RoleDao{
 	@Override
 	public void updateRole(Role role) {
 		EntityManager em = this.emf.createEntityManager();
-		Long id = role.getId();
+		Long id = role.getId_role();
 		Role rol = em.find(Role.class, id);
 		rol = em.merge(role);
 		EntityTransaction t = em.getTransaction();

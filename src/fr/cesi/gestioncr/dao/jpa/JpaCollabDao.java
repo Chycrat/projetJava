@@ -74,7 +74,7 @@ public class JpaCollabDao implements CollabDao {
 	@Override
 	public void updateCollab(Collab collab) {
 		EntityManager em = this.emf.createEntityManager();
-		Long id = collab.getId();
+		Long id = collab.getId_collab();
 		Collab clb = em.find(Collab.class, id);
 		clb = em.merge(collab);
 		EntityTransaction t = em.getTransaction();
