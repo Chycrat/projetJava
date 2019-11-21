@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import fr.cesi.gestioncr.entity.Tache;
@@ -17,7 +18,7 @@ public class JpaTacheDao implements TacheDao{
 	EntityManagerFactory emf = null;
 
 	public JpaTacheDao(EntityManagerFactory emf) {
-		this.emf = emf;
+		this.emf = Persistence.createEntityManagerFactory("my-pu");
 	}
 
 	@Override
@@ -54,7 +55,7 @@ public class JpaTacheDao implements TacheDao{
 	@Override
 	public void updateTache(Tache tache) {
 		EntityManager em = this.emf.createEntityManager();
-		Long id = tache.getId();
+		Long id = tache.getId_tache();
 		Tache tach = em.find(Tache.class, id);
 		tach = em.merge(tache);
 		EntityTransaction t = em.getTransaction();
