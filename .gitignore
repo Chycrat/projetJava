@@ -23,8 +23,14 @@
 hs_err_pid*
 /target/
 
+<<<<<<< HEAD
+WebContent/META-INF/MANIFEST.MF
+
+.classpath
+=======
 .classpath
 
 .DS_Store
 
 .settings/
+>>>>>>> Ulrich
