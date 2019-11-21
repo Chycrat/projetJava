@@ -16,7 +16,7 @@ import fr.cesi.gestioncr.entity.Collab;
 /**
  * Servlet implementation class listCollabServlet
  */
-@WebServlet("/listCollabServlet")
+@WebServlet("/listCollab")
 public class listCollabServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String AJOUT = "/addCollab.jsp";
