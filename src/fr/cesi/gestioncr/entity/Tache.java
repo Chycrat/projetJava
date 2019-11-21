@@ -21,8 +21,8 @@ public class Tache implements Serializable {
 	private String nom;
 	private String description;
 	private Date deadline;
-	@ManyToMany(mappedBy="tache")
-	private Collection<Collab> collabs;
+//	@ManyToMany(mappedBy="tache")
+//	private Collection<Collab> collab;
 	public String getNom() {
 		return nom;
 	}
@@ -44,12 +44,12 @@ public class Tache implements Serializable {
 	public Long getId() {
 		return id;
 	}
-	public Collection<Collab> getCollabs() {
-		return collabs;
-	}
-	public void setCollabs(Collection<Collab> collabs) {
-		this.collabs = collabs;
-	}
+//	public Collection<Collab> getCollabs() {
+//		return collab;
+//	}
+//	public void setCollabs(Collection<Collab> collabs) {
+//		this.collab = collabs;
+//	}
 	
 	
 }

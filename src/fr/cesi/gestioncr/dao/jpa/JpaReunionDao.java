@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import fr.cesi.gestioncr.entity.Reunion;
@@ -17,7 +18,7 @@ public class JpaReunionDao implements ReunionDao{
 	EntityManagerFactory emf = null;
 
 	public JpaReunionDao(EntityManagerFactory emf) {
-		this.emf = emf;
+		this.emf = Persistence.createEntityManagerFactory("my-pu");
 	}
 
 	@Override
