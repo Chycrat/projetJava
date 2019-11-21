@@ -2,14 +2,21 @@ package fr.cesi.gestioncr.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "reunion_collab")
 public class Reunion_Collab implements Serializable {
 	
+	@Id
 	@ManyToOne
 	@JoinColumn(name="collab_id")
 	private Collab collab;
+	@Id
 	@ManyToOne
 	@JoinColumn(name="reunion_id")
 	private Reunion reunion;
