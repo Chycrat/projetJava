@@ -11,8 +11,8 @@
 
 <body>
 	<c:forEach items ="${collab}" var="col">
-			${col.nom} ${col.prenom} - ${col.login}
-			<a href="http://localhost:8080/gestionCR/removeCollab?id=${col.id}">Supprimer collaborateur</a>
+			${col.id_collab} - ${col.nom} - ${col.prenom} - ${col.login}
+			<a href="http://localhost:8080/gestionCR/removeCollab?id=${col.id_collab}">Supprimer collaborateur</a><br>
 	</c:forEach>
 	
 	<li> <a href="http://localhost:8080/gestionCR/addCollab">Ajouter un collaborateur</a> <li>

@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="page.css"/>
 	</head>
 	<body>
-		<c:import url="/jsp/header.jsp" />
+		<c:import url="header.jsp" />
 		TEST
 		
 	</body>
