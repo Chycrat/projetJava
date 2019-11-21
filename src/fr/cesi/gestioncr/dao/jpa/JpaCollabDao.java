@@ -24,9 +24,9 @@ public class JpaCollabDao implements CollabDao {
 	@Override
 	public boolean Collab_existe(String name, String password)
 	{
-		EntityManager em = factory.createEntityManager();
+		EntityManager em = this.emf.createEntityManager();
 	
-		Query query = em.createQuery("SELECT count(id) FROM collab where nom = ?1 and pass = ?2");
+		Query query = em.createQuery("SELECT count(id) FROM Collab where login = ?1 and password = ?2");
 		
 		query.setParameter(1, name);
 		query.setParameter(2, password);

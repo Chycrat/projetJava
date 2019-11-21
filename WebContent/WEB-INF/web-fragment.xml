@@ -32,6 +32,10 @@
 		</servlet-class>
 	</servlet>
 	
+	<servlet>
+		<servlet-name>removeCollab</servlet-name>
+		<servlet-class>fr.cesi.gestioncr.servlet.removeCollab
+		</servlet-class>
+	</servlet>
 	
-    
 </web-fragment>
