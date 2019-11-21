@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import fr.cesi.gestioncr.entity.Reunion;
@@ -17,7 +18,7 @@ public class JpaReunionDao implements ReunionDao{
 	EntityManagerFactory emf = null;
 
 	public JpaReunionDao(EntityManagerFactory emf) {
-		this.emf = emf;
+		this.emf = Persistence.createEntityManagerFactory("my-pu");
 	}
 
 	@Override
@@ -46,7 +47,7 @@ public class JpaReunionDao implements ReunionDao{
 	@Override
 	public List<Reunion> getAllReunion() {
 		EntityManager em = this.emf.createEntityManager();
-		Query query = em.createQuery("SELECT p FROM Projet AS p");
+		Query query = em.createQuery("SELECT p FROM reunion AS p");
 		List<Reunion> reunion = (List<Reunion>) query.getResultList();
 		return reunion;
 	}
@@ -54,7 +55,7 @@ public class JpaReunionDao implements ReunionDao{
 	@Override
 	public void updateReunion(Reunion reunion) {
 		EntityManager em = this.emf.createEntityManager();
-		Long id = reunion.getId();
+		Long id = reunion.getId_reunion();
 		Reunion reu = em.find(Reunion.class, id);
 		reu = em.merge(reunion);
 		EntityTransaction t = em.getTransaction();

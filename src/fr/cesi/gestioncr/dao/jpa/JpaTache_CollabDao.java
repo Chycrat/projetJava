@@ -8,75 +8,59 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import fr.cesi.gestioncr.entity.Role;
-import fr.cesi.gestioncr.dao.RoleDao;
+import fr.cesi.gestioncr.entity.Tache_Collab;
+import fr.cesi.gestioncr.dao.Tache_CollabDao;
 
-public class JpaRoleDao implements RoleDao{
+public class JpaTache_CollabDao implements Tache_CollabDao{
 
 	private EntityManagerFactory factory = null;
 
 	EntityManagerFactory emf = null;
 
-	public JpaRoleDao(EntityManagerFactory emf) {
+	public JpaTache_CollabDao(EntityManagerFactory emf) {
 		this.emf = Persistence.createEntityManagerFactory("my-pu");
 	}
 
 	@Override
-	public Role addRole(Role role) {
+	public Tache_Collab addTache_Collab(Tache_Collab tache_collab) {
 		EntityManager em = this.emf.createEntityManager();
 		EntityTransaction t = em.getTransaction();
 		try {
 			t.begin();
-			em.persist(role);
+			em.persist(tache_collab);
 			t.commit();
 		} finally {
 			if (t.isActive()) t.rollback();
 			em.close();
 		}
-		return role;
+		return tache_collab;
 	}
 
 	@Override
-	public Role findRoleById(Long id) {
+	public Tache_Collab findTache_CollabById(Long id) {
 		EntityManager em = this.emf.createEntityManager();
-		Role role = em.find(Role.class, id);
+		Tache_Collab tache_collab = em.find(Tache_Collab.class, id);
 		em.close();
-		return role;
+		return tache_collab;
 	}
 
 	@Override
-	public List<Role> getAllRole() {
+	public List<Tache_Collab> getAllTache_Collab() {
 		EntityManager em = this.emf.createEntityManager();
-		Query query = em.createQuery("SELECT p FROM role AS p");
-		List<Role> role = (List<Role>) query.getResultList();
-		return role;
+		Query query = em.createQuery("SELECT p FROM tache_collab AS p");
+		List<Tache_Collab> tache_collab = (List<Tache_Collab>) query.getResultList();
+		return tache_collab;
 	}
 
-	@Override
-	public void updateRole(Role role) {
-		EntityManager em = this.emf.createEntityManager();
-		Long id = role.getId_role();
-		Role rol = em.find(Role.class, id);
-		rol = em.merge(role);
-		EntityTransaction t = em.getTransaction();
-		try {
-			t.begin();
-			em.persist(rol);
-			t.commit();
-		} finally {
-			if (t.isActive()) t.rollback();
-			em.close();
-		}
-
-	}
+	
 
 	@Override
-	public void removeRole(Role role) {
+	public void removeTache_Collab(Tache_Collab tache_collab) {
 		EntityManager em = this.emf.createEntityManager();
 		EntityTransaction t = em.getTransaction();
 		try {
 			t.begin();
-			em.remove(em.contains(role)?role:em.merge(role));
+			em.remove(em.contains(tache_collab)?tache_collab:em.merge(tache_collab));
 			t.commit();
 		} finally {
 			if (t.isActive()) t.rollback();

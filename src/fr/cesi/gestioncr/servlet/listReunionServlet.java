@@ -10,26 +10,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.cesi.gestioncr.dao.jpa.JpaCollabDao;
-import fr.cesi.gestioncr.entity.Collab;
+import fr.cesi.gestioncr.dao.jpa.JpaReunionDao;
+import fr.cesi.gestioncr.entity.Reunion;
 
 /**
- * Servlet implementation class listCollabServlet
+ * Servlet implementation class listReunionServlet
  */
-@WebServlet("/listCollab")
-public class listCollabServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/listReunion")
+public class listReunionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String VUE = "/auth/listeCollab.jsp";
+	private static final String VUE = "/auth/listeReunion.jsp";
 	private EntityManagerFactory emf;
-       
-    public listCollabServlet() {
+
+	public listReunionServlet() {
         super();
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		JpaCollabDao myDao = new JpaCollabDao(emf);
-		Collection<Collab> collabs = myDao.getAllCollab();
-		request.setAttribute("collab", collabs);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		JpaReunionDao myDao = new JpaReunionDao(emf);
+		Collection<Reunion> reunions = myDao.getAllReunion();
+		request.setAttribute("reunion", reunions);
 		request.getRequestDispatcher(VUE).forward(request, response);
 	}
 
