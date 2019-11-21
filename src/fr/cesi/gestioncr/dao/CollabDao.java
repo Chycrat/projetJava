@@ -7,12 +7,12 @@ public interface CollabDao {
 	
 	public Collab addCollab(Collab collab);
 	
-	public Collab findCollab(Long id);
+	public Collab findCollabById(Long id);
 	
 	public List<Collab> getAllCollab();
 	
-	public void updateProjet(Collab collab);
+	public void updateCollab(Collab collab);
 	
-	public void removeProjet(Collab collab);
+	public void removeCollab(Collab collab);
 	
 }
