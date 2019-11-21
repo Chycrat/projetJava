@@ -17,12 +17,13 @@ public class Tache_Collab implements Serializable {
 	
 	@Id
 	@ManyToOne
-	@JoinColumn(name="collab_id")
+	@JoinColumn(name="id_collab")
 	private Collab collab;
 	@Id
 	@ManyToOne
-	@JoinColumn(name="tache_id")
+	@JoinColumn(name="id_tache")
 	private Tache tache;
+	
 	public Collab getCollab() {
 		return collab;
 	}

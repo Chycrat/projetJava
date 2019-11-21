@@ -8,11 +8,11 @@
 <%@ include file="/jsp/header.jsp" %>
 </head>
 <body>
-	<c:forEach items =${collab}" var"collab">
-			<span class="text"> ${collab.id}</span>
-			<span class="text"></span>${collab.prenom}</span>
-			<span class="text"></span>${collab.nom}</span>
-			<span class="text"><${collab.login}</span>
+	<c:forEach items ="${collab}" var"col">
+			<span class="text"> ${col.id_collab}</span>
+			<span class="text"></span>${col.prenom}</span>
+			<span class="text"></span>${col.nom}</span>
+			<span class="text"><${col.login}</span>
 			<span class="text"></legend>
 	</c:forEach>
 </body>
