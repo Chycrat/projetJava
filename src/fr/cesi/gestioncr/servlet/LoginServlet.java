@@ -13,9 +13,10 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/login")
+@WebServlet(urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	public static final String VUE = "/jsp/login.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -29,7 +30,7 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
 	}
 
 	/**
@@ -45,11 +46,13 @@ public class LoginServlet extends HttpServlet {
 		boolean existe = util.employee_existe(user, password);*/
 		
 		session.setAttribute("name", user);
-		/*System.out.println("role id" + role_id)*/
-		
-		/*if(existe == true)*/
-		if(user == "admin") response.sendRedirect(request.getContextPath() + "/auth/Acceuil.jsp"); 
-		else response.sendRedirect(request.getContextPath() + "/jsp/Login.jsp"); 
+		if(user.equals("admin")) {
+			response.sendRedirect(request.getContextPath() + "/accueil"); 
+		}
+		else {
+			request.setAttribute("error", true);
+			doGet(request, response);
+		}
 		
 		
 	}

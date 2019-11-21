@@ -23,14 +23,22 @@
 hs_err_pid*
 /target/
 
-<<<<<<< HEAD
-WebContent/META-INF/MANIFEST.MF
-
 .classpath
+<<<<<<< HEAD
 =======
 .classpath
 
 .DS_Store
 
 .settings/
->>>>>>> Ulrich
+
+WebContent/META-INF/MANIFEST.MF
+bin
+=======
+
+bin
+
+.settings/.jsdtscope
+
+.settings/
+>>>>>>> Romain

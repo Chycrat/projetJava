@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-fragment>
-	<name>GestionCR</name>
+	<name>gestionCR</name>
 	
 	<servlet>
 		<servlet-name>login</servlet-name>
 		<servlet-class>fr.cesi.gestioncr.servlet.LoginServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>listCollab</servlet-name>
+		<servlet-class>fr.cesi.gestioncr.servlet.listCollabServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>addReunion</servlet-name>
+		<servlet-class>fr.cesi.gestioncr.servlet.addReunionServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Accueil</servlet-name>
+		<servlet-class>fr.cesi.gestioncr.servlet.AcceuilServlet
 		</servlet-class>
 	</servlet>
 	
