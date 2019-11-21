@@ -12,9 +12,10 @@
 <link rel="stylesheet" type="text/css" href="page.css"/>
 <meta charset="ISO-8859-1">
 <title>Création réunion</title>
- <%@ include file="/jsp/header.jsp" %>
+
 </head>
 <body>
+ <%@ include file="/jsp/header.jsp" %>
 <form name="formulaire" method="post" action="/GestionCR/Addreunion">
 <div class="form-style-5">
 	<fieldset>
@@ -23,8 +24,8 @@
 		<input type="text" name="objectif" placeholder="Objectif *">
 		<input type="text" name="lieu" placeholder="Lieu *">
 		<select name="collab" multiple>
-			<c:forEach items =${collabs}" var"collab">
-			<option value=${collab.id}> ${collab.nom}</option>
+			<c:forEach items =${collab}" var"col">
+			<option value=${col.id}> ${col.nom}</option>
 			
 			
 			</c:forEach>	 
