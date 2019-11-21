@@ -15,9 +15,8 @@ import fr.cesi.gestioncr.dao.jpa.JpaRoleDao;
 import fr.cesi.gestioncr.entity.Collab;
 import fr.cesi.gestioncr.entity.Role;
 
-/**
- * Servlet implementation class addReunionServlet
- */
+
+
 @WebServlet("/addCollab")
 public class addCollabServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
@@ -48,7 +47,7 @@ public class addCollabServlet extends HttpServlet{
 		collab.setLogin(login);
 		collab.setPassword(password);
 		collab.setRole(jpaRole.findRoleById(id_role));
-		
+		jpaCollab.addCollab(collab);
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 			
 	}
