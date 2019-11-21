@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Collaborateurs</title>
-<%@ include file="/jsp/header.jsp" %>
+
 </head>
 <body>
 	<c:forEach items ="${collab}" var"col">

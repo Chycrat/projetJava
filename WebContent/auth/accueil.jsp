@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Acceuil</title>	
+		<title>Accueil</title>	
 		<link rel="stylesheet" type="text/css" href="page.css"/>
 	</head>
 	<body>
