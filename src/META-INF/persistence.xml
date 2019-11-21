@@ -13,7 +13,7 @@
 			<property name="javax.persistence.jdbc.password"
 				value="cesi" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://10.173.128.135:3306/gestioncr" />
+				value="jdbc:mysql://10.173.128.135/gestioncr" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>
 	</persistence-unit>

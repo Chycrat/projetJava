@@ -19,19 +19,21 @@ public class Collab implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+	private Long id_collab;
 	private String nom;
 	private String prenom;
 	private String login;
 	private String password;
-//	@ManyToMany(mappedBy="collab")
-//	private Collection<Tache> tache;
-//	@ManyToMany(mappedBy="collab")
-//	private Collection<Reunion> reunion;
 	@ManyToOne
-	@JoinColumn(name="role_id")
+	@JoinColumn(name="id_role")
 	private Role role;
 	
+	public Long getId_collab() {
+		return id_collab;
+	}
+	public void setId_collab(Long id_collab) {
+		this.id_collab = id_collab;
+	}
 	public String getNom() {
 		return nom;
 	}
@@ -43,9 +45,6 @@ public class Collab implements Serializable {
 	}
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
-	}
-	public Long getId() {
-		return id;
 	}
 	public String getLogin() {
 		return login;
@@ -59,17 +58,12 @@ public class Collab implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-//	public Collection<Tache> getTaches() {
-//		return tache;
-//	}
-//	public void setTaches(Collection<Tache> taches) {
-//		this.tache = taches;
-//	}
 	public Role getRole() {
 		return role;
 	}
 	public void setRole(Role role) {
 		this.role = role;
 	}
-
+	
+	
 }

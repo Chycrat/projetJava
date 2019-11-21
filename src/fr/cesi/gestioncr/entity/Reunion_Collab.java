@@ -14,11 +14,11 @@ public class Reunion_Collab implements Serializable {
 	
 	@Id
 	@ManyToOne
-	@JoinColumn(name="collab_id")
+	@JoinColumn(name="id_collab")
 	private Collab collab;
 	@Id
 	@ManyToOne
-	@JoinColumn(name="reunion_id")
+	@JoinColumn(name="id_reunion")
 	private Reunion reunion;
 	public Collab getCollab() {
 		return collab;
