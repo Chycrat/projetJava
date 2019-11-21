@@ -41,7 +41,7 @@ public class AuthenticateFilter implements Filter {
         name = (String) session.getAttribute("name") ;
   
          if (name == null) {
-             res.sendRedirect( httpRequest.getContextPath() + "/jsp/Login.jsp" );
+             res.sendRedirect( httpRequest.getContextPath() + "/jsp/login.jsp" );
          } 
          else {
              chain.doFilter( request, response );
