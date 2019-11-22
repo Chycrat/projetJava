@@ -165,6 +165,7 @@ li a:hover {
 .form-style-5 input[type="password"],
 .form-style-5 input[type="date"],
 .form-style-5 input[type="datetime"],
+.form-style-5 input[type="datetime-local"],
 .form-style-5 input[type="email"],
 .form-style-5 input[type="number"],
 .form-style-5 input[type="search"],
@@ -204,7 +205,7 @@ li a:hover {
 }
 .form-style-5 select{
 	-webkit-appearance: menulist-button;
-	height:35px;
+	height:150px;
 }
 .form-style-5 .number {
 	background: #1abc9c;
