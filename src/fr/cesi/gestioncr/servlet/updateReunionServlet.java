@@ -24,7 +24,7 @@ import fr.cesi.gestioncr.entity.Reunion_Collab;
 public class updateReunionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String MODIF = "/auth/updateReunion.jsp";
-	private static final String VUE = "listeReunion";
+	private static final String VUE = "/listReunion";
 	private EntityManagerFactory emf;
        
     public updateReunionServlet() {
@@ -33,11 +33,9 @@ public class updateReunionServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JpaReunionDao myDao = new JpaReunionDao(emf);
+		JpaReunion_CollabDao reuColabDao = new JpaReunion_CollabDao(emf);
 		Reunion reunion = myDao.findReunionById(Long.parseLong(request.getParameter("id")));
 		request.setAttribute("reunion", reunion);
-		JpaReunion_CollabDao colabDao = new JpaReunion_CollabDao(emf);
-		Collection<Reunion_Collab> reu_collabs = colabDao.getReunion_Collab_by_ReunionId(reunion.getId_reunion());
-		request.setAttribute("collab", collabs);
 		this.getServletContext().getRequestDispatcher(MODIF).forward(request, response);
 	}
 
@@ -45,9 +43,8 @@ public class updateReunionServlet extends HttpServlet {
 		JpaReunionDao myDao = new JpaReunionDao(emf);
 
 		String CompteRendu = request.getParameter("cr");
-		Long id_Reu = Long.parseLong(request.getParameter("id_reu"));
-		
-		Reunion reunion = new Reunion();
+		Long id_Reu = Long.parseLong(request.getParameter("id_reunion"));
+		Reunion reunion = myDao.findReunionById(id_Reu);
 		
 		reunion.setCompte_rendu(CompteRendu);
 		myDao.updateReunion(reunion);

@@ -62,5 +62,11 @@
 		</servlet-class>
 	</servlet>
 	
+	<servlet>
+		<servlet-name>showReunion</servlet-name>
+		<servlet-class>fr.cesi.gestioncr.servlet.showReunionServlet
+		</servlet-class>
+	</servlet>
+	
 	
 </web-fragment>
