@@ -2,6 +2,7 @@ package fr.cesi.gestioncr.dao;
 
 import java.util.List;
 
+import fr.cesi.gestioncr.entity.Collab;
 import fr.cesi.gestioncr.entity.Reunion_Collab;
 
 public interface Reunion_CollabDao {
@@ -22,6 +23,6 @@ public interface Reunion_CollabDao {
 	
 	public List<Reunion_Collab> getCollabFromReunion();
 
-	List<Reunion_Collab> getCollabFromReunion(Long id_reunion);
+	public List<Collab> getCollabFromReunion(Long id_reunion);
 
 }
