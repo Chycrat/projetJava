@@ -9,6 +9,7 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import fr.cesi.gestioncr.dao.Reunion_CollabDao;
+import fr.cesi.gestioncr.entity.Collab;
 import fr.cesi.gestioncr.entity.Reunion_Collab;
 
 public class JpaReunion_CollabDao implements Reunion_CollabDao{
@@ -53,11 +54,15 @@ public class JpaReunion_CollabDao implements Reunion_CollabDao{
 	}
 	
 	@Override
-	public List<Reunion_Collab> getCollabFromReunion(Long id_reunion) {
+	public List<Collab> getCollabFromReunion(Long id_reunion) {
 		EntityManager em = this.emf.createEntityManager();
+<<<<<<< HEAD
 		Query query = em.createQuery("SELECT nom FROM Reunion_Collab as rc INNER JOIN Collab as co ON rc.id_collab = co.id_collab WHERE rc.id_reunion = ?1");
+=======
+		Query query = em.createQuery("SELECT co FROM Reunion_Collab as rc INNER JOIN Collab as co ON rc.id_collab = co.id_collab WHERE rc.id_reunion = ?1");
+>>>>>>> master
 		query.setParameter(1, id_reunion);
-		List<Reunion_Collab> reunion_collab = (List<Reunion_Collab>) query.getResultList();
+		List<Collab> reunion_collab = (List<Collab>) query.getResultList();
 		return reunion_collab;
 	}
 
