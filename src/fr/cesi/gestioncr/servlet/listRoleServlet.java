@@ -30,7 +30,7 @@ public class listRoleServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JpaRoleDao myDao = new JpaRoleDao(emf);
 		Collection<Role> roles = myDao.getAllRole();
-		request.setAttribute("roles", roles);
+		request.setAttribute("role", roles);
 		request.getRequestDispatcher(VUE).forward(request, response);
 	}
 
