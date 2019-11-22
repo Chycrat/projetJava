@@ -54,8 +54,7 @@ public class addReunionServlet extends HttpServlet {
 			Date dateReu = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("date"));
 			String lieu = request.getParameter("lieu");
 			String objectif = request.getParameter("objectif");
-			Long id_collab = Long.parseLong(request.getParameter("id_collab"));
-			
+			String[] list_collab = request.getParameterValues("collab");
 			Reunion reunion = new Reunion();
 			Reunion_Collab reunion_collab = new Reunion_Collab();
 			
@@ -64,7 +63,9 @@ public class addReunionServlet extends HttpServlet {
 			reunion.setDate(dateReu);
 			reunion.setLieu(lieu);
 			reunion.setObjectif(objectif);
-			reunion_collab.setCollab(jpaCol.findCollabById(id_collab));
+			for (String id_collab : list_collab) {
+				reunion_collab.setCollab(jpaCol.findCollabById(Long.parseLong(id_collab)));
+			}
 			reunion_collab.setReunion(jpaReu.findReunionById(id_reunion));
 			
 			jpaReu.addReunion(reunion);
