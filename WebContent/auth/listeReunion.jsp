@@ -11,7 +11,7 @@
 <body>
 
 	<c:import url="header.jsp" />
-			
+	<h1>LISTE DES REUNIONS</h1>
 	<table class="container">
 	<thead>
 		<tr>
@@ -38,10 +38,14 @@
 		</c:forEach>
 	</tbody>
 	</table>
-	
-	<table class="container">
-		<tbody> <td> <a href="http://localhost:8080/gestionCR/addReunion">Créer une réunion</a> </td> </tbody>
-	</table>
-
+	<a href="http://localhost:8080/gestionCR/addReunion">
+		<table class="container">
+			<tbody>
+			 	<tr> 
+					<td> Créer une réunion</td>
+				</tr> 
+			</tbody>
+		</table>
+	</a> 
 </body>
 </html>

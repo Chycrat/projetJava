@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import fr.cesi.gestioncr.dao.jpa.JpaCollabDao;
 import fr.cesi.gestioncr.dao.jpa.JpaReunionDao;
+import fr.cesi.gestioncr.dao.jpa.JpaReunion_CollabDao;
 import fr.cesi.gestioncr.entity.Collab;
 import fr.cesi.gestioncr.entity.Reunion;
+import fr.cesi.gestioncr.entity.Reunion_Collab;
 
 /**
  * Servlet implementation class updateReunionServlet
@@ -33,8 +35,8 @@ public class updateReunionServlet extends HttpServlet {
 		JpaReunionDao myDao = new JpaReunionDao(emf);
 		Reunion reunion = myDao.findReunionById(Long.parseLong(request.getParameter("id")));
 		request.setAttribute("reunion", reunion);
-		JpaCollabDao colabDao = new JpaCollabDao(emf);
-		Collection<Collab> collabs = colabDao.getAllCollab();
+		JpaReunion_CollabDao colabDao = new JpaReunion_CollabDao(emf);
+		Collection<Reunion_Collab> reu_collabs = colabDao.getReunion_Collab_by_ReunionId(reunion.getId_reunion());
 		request.setAttribute("collab", collabs);
 		this.getServletContext().getRequestDispatcher(MODIF).forward(request, response);
 	}
