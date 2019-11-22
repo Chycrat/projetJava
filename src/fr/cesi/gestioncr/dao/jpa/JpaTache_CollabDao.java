@@ -8,7 +8,9 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import fr.cesi.gestioncr.entity.Collab;
 import fr.cesi.gestioncr.entity.Reunion_Collab;
+import fr.cesi.gestioncr.entity.Tache;
 import fr.cesi.gestioncr.entity.Tache_Collab;
 import fr.cesi.gestioncr.dao.Tache_CollabDao;
 
