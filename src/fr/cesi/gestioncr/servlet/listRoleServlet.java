@@ -18,7 +18,7 @@ import fr.cesi.gestioncr.entity.Role;
 @WebServlet("/listRole")
 public class listRoleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String VUE = "/auth/listeRole.jsp";
+	private static final String VUE = "/auth/listRole.jsp";
 	private EntityManagerFactory emf;   
 
 	
@@ -30,7 +30,7 @@ public class listRoleServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JpaRoleDao myDao = new JpaRoleDao(emf);
 		Collection<Role> roles = myDao.getAllRole();
-		request.setAttribute("roles", roles);
+		request.setAttribute("role", roles);
 		request.getRequestDispatcher(VUE).forward(request, response);
 	}
 
