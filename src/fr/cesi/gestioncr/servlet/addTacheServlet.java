@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.metamodel.SetAttribute;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,7 +26,7 @@ import fr.cesi.gestioncr.entity.Tache;
 public class addTacheServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String AJOUT = "/auth/addTache.jsp";
-	private static final String VUE = "/listTache";
+	private static final String VUE = "/listReunion";
 	private EntityManagerFactory emf;
        
     public addTacheServlet() {
@@ -34,8 +35,7 @@ public class addTacheServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JpaReunionDao myDao = new JpaReunionDao(emf);
-		Collection<Reunion> reunions = myDao.getAllReunion();
-		request.setAttribute("reunion", reunions);
+		request.setAttribute("id_reu", request.getParameter("id"));
 		request.getRequestDispatcher(AJOUT).forward(request, response);
 	}
 
@@ -46,7 +46,7 @@ public class addTacheServlet extends HttpServlet {
 		
 		String nom_tache = request.getParameter("nom_tache");
 		String description = request.getParameter("description");
-			Date deadline = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("date_reu"));
+		Date deadline = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("date_reu"));
 
 		Long id_reu = Long.parseLong(request.getParameter("id_reunion"));
 		
@@ -57,11 +57,9 @@ public class addTacheServlet extends HttpServlet {
 		myTach.setDeadline(deadline);
 		myTach.setReunion(jpaReu.findReunionById(id_reu));
 		jpaTac.addTache(myTach);
-		
 		request.getRequestDispatcher(VUE).forward(request, response);
 		
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
