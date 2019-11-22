@@ -25,13 +25,13 @@
 	                <label for="date_reu">date <span class="requis">*</span></label>
 	                <input type="date" id="date_reu" name="date_reu"/>
 	                <br/> 
-	               	<input type="hidden" id="id_reunion" value="${reunion.id_reunion}">
+	               	<input type="hidden" id="id_reunion" name="id_reunion" value="${id_reu}">
 	               	
 	                <input type="submit" value="Ajouter" class="sansLabel" />
+        			<a href="http://localhost:8080/gestionCR/updateReunion?id=${id_reu}">Retour</a>
 	                <br />
 	            </fieldset>
 	          </div>
         </form>
-        <a href="http://localhost:8080/gestionCR/listTache">Retour liste</a>
     </body>
 </html>
