@@ -21,11 +21,11 @@ import fr.cesi.gestioncr.entity.Tache;
 /**
  * Servlet implementation class addTacheServlet
  */
-@WebServlet("/addTacheServlet")
+@WebServlet(urlPatterns = "/addTache")
 public class addTacheServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String AJOUT = "/auth/addTache.jsp";
-	private static final String VUE = "/listCollab";
+	private static final String VUE = "/listTache";
 	private EntityManagerFactory emf;
        
     public addTacheServlet() {
@@ -57,6 +57,8 @@ public class addTacheServlet extends HttpServlet {
 		myTach.setDeadline(deadline);
 		myTach.setReunion(jpaReu.findReunionById(id_reu));
 		jpaTac.addTache(myTach);
+		
+		request.getRequestDispatcher(VUE).forward(request, response);
 		
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block

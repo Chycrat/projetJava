@@ -40,7 +40,7 @@
 			<tr></tr>
 		</c:forEach>
 	</tbody>
-</table>
+	</table>
 	
 	<table class="container">
 		<tbody> <td> <a href="http://localhost:8080/gestionCR/addCollab">Ajouter un collaborateur</a> </td> </tbody>
