@@ -17,7 +17,7 @@ import fr.cesi.gestioncr.entity.Role;
 
 
 
-@WebServlet("/addCollab")
+@WebServlet(urlPatterns = "/addCollab")
 public class addCollabServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	private static final String AJOUT = "/auth/addCollab.jsp";
@@ -27,18 +27,18 @@ public class addCollabServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JpaRoleDao jpaRole = new JpaRoleDao(emf);
 		List<Role> roles = jpaRole.getAllRole();
-		request.setAttribute("roles", roles);
-		this.getServletContext().getRequestDispatcher( AJOUT ).forward( request, response );
+		request.setAttribute("role", roles);
+		this.getServletContext().getRequestDispatcher(AJOUT).forward( request, response );
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JpaCollabDao jpaCollab = new JpaCollabDao(emf);
 		JpaRoleDao jpaRole = new JpaRoleDao(emf);
 	
-		String nom = request.getParameter("nom");
-		String prenom = request.getParameter("prenom");
-		String login = request.getParameter("login");
-		String password = request.getParameter("password");
+		String nom = request.getParameter("Nom");
+		String prenom = request.getParameter("Prenom");
+		String login = request.getParameter("Login");
+		String password = request.getParameter("Password");
 		Long id_role = Long.parseLong(request.getParameter("id_role"));
 		
 		Collab collab = new Collab();

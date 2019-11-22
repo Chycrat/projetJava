@@ -1,19 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
         <title>Ajout de collaborateur</title>
-        <link type="text/css" rel="stylesheet" href="page.css" />
+        <link type="text/css" rel="stylesheet" href="auth/page.css" />
     </head>
     <body>  
     
-		<ul>
-			<li> <img src="https://cdn1.iconfinder.com/data/icons/business-and-finance-20/200/vector_65_02-256.png" alt="Team pic" width="5%"> </li>
-			<li> <a href="http://localhost:8080/gestionCR/listCollab">Liste des collaborateurs </a> <li>
-			<li> <a href="http://localhost:8080/gestionCR/addReunion">Création réunion</a> <li>
-			<li> <a href="http://localhost:8080/gestionCR/listeReunion">Liste réunion</a> <li>
-		</ul>
-		
+		<c:import url="header.jsp" />
         <form method="post" action="addCollab">
             <fieldset>
                 <legend>Création d'un user</legend>
@@ -32,8 +29,8 @@
 				<br/>
                	<label for="id_role">Role du collaborateur <span class="requis">*</span></label>
                	<select name="id_role">
-	               	<c:forEach items="${roles}" var="ro">
-					        <option value ="${ro.id}">${ro.nom}</option>
+	               	<c:forEach items="${role}" var="ro">
+					        <option value ="${ro.id_role}">${ro.nom_role}</option>
 			        </c:forEach>
 				</select>
 				</br>
