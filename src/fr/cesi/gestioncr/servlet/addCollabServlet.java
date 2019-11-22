@@ -15,6 +15,17 @@ import fr.cesi.gestioncr.dao.jpa.JpaRoleDao;
 import fr.cesi.gestioncr.entity.Collab;
 import fr.cesi.gestioncr.entity.Role;
 
+import java.util.Properties;
+
+import javax.mail.Session;
+import javax.mail.Message;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.InternetAddress;
+import javax.mail.Transport;
+ 
+import javax.mail.internet.AddressException;
+import javax.mail.NoSuchProviderException;
+import javax.mail.MessagingException;
 
 
 @WebServlet(urlPatterns = "/addCollab")
@@ -49,6 +60,25 @@ public class addCollabServlet extends HttpServlet{
 		collab.setPassword(password);
 		collab.setRole(jpaRole.findRoleById(id_role));
 		collab.setEmail(email);
+		try {
+		Properties		props	    = new Properties();
+	    // props.setProperty("mail.from", "contact@chicoree.fr");
+	    Session		session	    = Session.getInstance(props);
+ 
+	    Message		message	    = new MimeMessage(session);
+	    InternetAddress	recipient   = new InternetAddress(email);
+	    
+			message.setRecipient(Message.RecipientType.TO, recipient);
+		
+	    message.setSubject("Hello " + prenom);
+	    message.setText(prenom + ", vous venez de créer un compte sur l'application de gestion des CR");
+	    message.setText("\nCordialement, la direction");
+
+	    Transport.send(message);
+		} catch (MessagingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		jpaCollab.addCollab(collab);
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 			
