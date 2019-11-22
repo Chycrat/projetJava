@@ -13,13 +13,38 @@
 
 	<c:import url="header.jsp" />
 	
-	<c:forEach items ="${collab}" var="col">
-			${col.id_collab} - ${col.nom} - ${col.prenom} - ${col.login}
-			<a href="http://localhost:8080/gestionCR/removeCollab?id=${col.id_collab}">Supprimer collaborateur</a><br>
-	</c:forEach>
+<table class="container">
+	<thead>
+		<tr>
+			<th><h1>Id</h1></th>
+			<th><h1>Nom</h1></th>
+			<th><h1>Prenom</h1></th>
+			<th><h1>Login</h1></th>
+			<th><h1>Role</h1></th>
+			<th><h1>      </h1></th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach items ="${collab}" var="col">
+			
+			<td>${col.id_collab}</td>
+		
+			<td>${col.nom} </td>
+		
+			<td> ${col.prenom}</td>
+		
+			<td> ${col.login}</td>
+			<td> ${col.role.nom_role} </td>
+			
+			<td><a href="http://localhost:8080/gestionCR/removeCollab?id=${col.id_collab}">Supprimer collaborateur</a><br></td>
+			<tr></tr>
+		</c:forEach>
+	</tbody>
+</table>
 	
-	<a href="http://localhost:8080/gestionCR/addCollab">Ajouter un collaborateur</a>
-	
+	<table class="container">
+		<tbody> <td> <a href="http://localhost:8080/gestionCR/addCollab">Ajouter un collaborateur</a> </td> </tbody>
+	</table>
 	
 </body>
 </html>
