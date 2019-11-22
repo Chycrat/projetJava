@@ -27,7 +27,7 @@ import fr.cesi.gestioncr.entity.Reunion_Collab;
 public class addReunionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String AJOUT = "/auth/addReunion.jsp";
-	private static final String VUE = "listReunion";
+	private static final String VUE = "/listReunion";
 	private EntityManagerFactory emf;
        
     /**
@@ -51,25 +51,25 @@ public class addReunionServlet extends HttpServlet {
 		JpaReunion_CollabDao jpaReuCol = new JpaReunion_CollabDao(emf);
 		
 		try {
-			Date dateReu = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("date"));
+			Date dateReu = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("date"));
 			String lieu = request.getParameter("lieu");
 			String objectif = request.getParameter("objectif");
 			String[] list_collab = request.getParameterValues("collab");
 			Reunion reunion = new Reunion();
 			Reunion_Collab reunion_collab = new Reunion_Collab();
 			
-			Long id_reunion = reunion.getId_reunion();
-			
 			reunion.setDate(dateReu);
 			reunion.setLieu(lieu);
 			reunion.setObjectif(objectif);
+			jpaReu.addReunion(reunion);
+
+			Long id_reunion = reunion.getId_reunion();
 			for (String id_collab : list_collab) {
 				reunion_collab.setCollab(jpaCol.findCollabById(Long.parseLong(id_collab)));
+				reunion_collab.setReunion(jpaReu.findReunionById(id_reunion));
+				jpaReuCol.addReunion_Collab(reunion_collab);
 			}
-			reunion_collab.setReunion(jpaReu.findReunionById(id_reunion));
 			
-			jpaReu.addReunion(reunion);
-			jpaReuCol.addReunion_Collab(reunion_collab);
 			
 			this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 			
