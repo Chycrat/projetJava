@@ -13,11 +13,8 @@
 	
 	<body>
 		<c:import url="header.jsp" />
+		<h1>LISTE DES ROLES</h1>
 		
-		<table class="container">
-			<tbody> <td> <a href="http://localhost:8080/gestionCR/addRole">Créer un rôle</a> </td> </tbody>
-		</table>
-	
 		<table class="container">
 			<tbody>
 				<c:forEach items ="${role}" var="rol">
@@ -29,6 +26,12 @@
 			</tbody>
 		
 		</table>
+		<a href="http://localhost:8080/gestionCR/addRole">
+		<table class="container">
+			<tbody> <td> Créer un rôle </td> </tbody>
+		</table>
+		</a>
+	
 	
 	</body>
 	

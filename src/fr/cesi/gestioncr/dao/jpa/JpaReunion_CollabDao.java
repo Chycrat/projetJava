@@ -51,6 +51,15 @@ public class JpaReunion_CollabDao implements Reunion_CollabDao{
 		List<Reunion_Collab> reunion_collab = (List<Reunion_Collab>) query.getResultList();
 		return reunion_collab;
 	}
+	
+	@Override
+	public List<Reunion_Collab> getCollabFromReunion(Long id_reunion) {
+		EntityManager em = this.emf.createEntityManager();
+		Query query = em.createQuery("SELECT co.nom, co.prenom FROM Reunion_Collab as rc INNER JOIN Collab as co ON rc.id_collab = co.id_collab WHERE rc.id_reunion = ?1");
+		query.setParameter(1, id_reunion);
+		List<Reunion_Collab> reunion_collab = (List<Reunion_Collab>) query.getResultList();
+		return reunion_collab;
+	}
 
 	@Override
 	public void removeReunion_Collab(Reunion_Collab reunion_collab) {
@@ -89,6 +98,12 @@ public class JpaReunion_CollabDao implements Reunion_CollabDao{
 		query.setParameter(1, id);
 		List<Reunion_Collab> reunion_collab = (List<Reunion_Collab>) query.getResultList();
 		return reunion_collab;
+	}
+
+	@Override
+	public List<Reunion_Collab> getCollabFromReunion() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
