@@ -67,6 +67,9 @@ public class addReunionServlet extends HttpServlet {
 			reunion_collab.setCollab(jpaCol.findCollabById(id_collab));
 			reunion_collab.setReunion(jpaReu.findReunionById(id_reunion));
 			
+			jpaReu.addReunion(reunion);
+			jpaReuCol.addReunion_Collab(reunion_collab);
+			
 			this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 			
 		} catch (ParseException e) {
