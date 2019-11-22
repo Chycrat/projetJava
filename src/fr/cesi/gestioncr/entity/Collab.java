@@ -24,6 +24,7 @@ public class Collab implements Serializable {
 	private String prenom;
 	private String login;
 	private String password;
+	private String email;
 	@ManyToOne
 	@JoinColumn(name="id_role")
 	private Role role;
@@ -63,6 +64,12 @@ public class Collab implements Serializable {
 	}
 	public void setRole(Role role) {
 		this.role = role;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	
