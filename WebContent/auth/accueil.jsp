@@ -12,7 +12,7 @@
 	<body>
 		<c:import url="header.jsp" />
 
-		<h1> Gestions réunions et collaborateurs </h1>
+		<h1> Gestion réunions et collaborateurs </h1>
 		
 	</body>
 </html>
