@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,7 +21,7 @@ public class Tache implements Serializable {
 	private String nom_tache;
 	private String description;
 	private Date deadline;
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name="id_reunion")
 	private Reunion reunion;
 	public Long getId_tache() {

@@ -8,32 +8,29 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="auth/page.css"/>
-<meta charset="ISO-8859-1">
-<title>Création réunion</title>
-
-</head>
-<body>
-
-	<c:import url="header.jsp" />
-	<form name="formulaire" method="post" action="/GestionCR/addReunion">
-		<div class="form-style-5">
-			<fieldset>
-				<legend><span class="number">1</span>Création d'une réunion</legend>
-				<input type="datetime-local" name="date" placeholder="Date *">
-				<input type="text" name="objectif" placeholder="Objectif *">
-				<input type="text" name="lieu" placeholder="Lieu *">
-				<select name="collab" multiple>
-					<c:forEach items ="${collab}" var="col">
-					<option value="${col.id_collab}"> ${col.nom}</option>
-					
-					
-					</c:forEach>	 
-		  		</select>
-			</fieldset>
-			<input type="submit" value="Création de la réunion">
-		</div>
-	</form>
-</body>
+	<head>
+		<link rel="stylesheet" type="text/css" href="auth/page.css"/>
+		<meta charset="ISO-8859-1">
+		<title>Création réunion</title>
+	</head>
+	<body>
+	
+		<c:import url="header.jsp" />
+		<form name="formulaire" method="post" action="addReunion">
+			<div class="form-style-5">
+				<fieldset>
+					<legend><span class="number">1</span>Création d'une réunion</legend>
+					<input type="datetime-local" name="date" placeholder="Date *" required >
+					<input type="text" name="objectif" placeholder="Objectif *" required>
+					<input type="text" name="lieu" placeholder="Lieu *" required>
+					<select name="collab" multiple required>
+						<c:forEach items ="${collab}" var="col">
+							<option value="${col.id_collab}"> ${col.nom}</option>
+						</c:forEach>	 
+			  		</select>
+				</fieldset>
+				<input type="submit" value="Création de la réunion">
+			</div>
+		</form>
+	</body>
 </html>
