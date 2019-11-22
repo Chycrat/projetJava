@@ -2,6 +2,9 @@
 
 HALLAY Valentin, CHRETIEN Romain, HASSED Ulrich, BROCHARD Allan
 
+
+Le MCD présent sur le github est en version 1, il manque l'email. 
+
 Utiliser le jeu de donnée joint. script : 
 -   init_database.sql
 
@@ -20,8 +23,12 @@ Possibilitées :
 - Affichage liste roles 
 - Maj d'une réunion -> Créer une tache dessus 
                     -> Ajouter un compte rendu
+- Affichage détails réunion (Infos réunion, taches associées)
 
 
 
-Non terminés : 
-- Affichage détails réunion (Infos réunion, taches associées et collaborateurs associés )
+
+Dans la methode addReunion servlet pour l'envoi de mail, 
+renseigner l'username avec l'adresse email expeditrice ainsi que le mot de passe. 
+
+Configurer les propriétés du serveur smtp. et renseignez les adresses mails de collaborateurs en base 
