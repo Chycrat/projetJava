@@ -13,6 +13,8 @@
 		<c:import url="header.jsp" />
 
 		<h1> Gestion réunions et collaborateurs </h1>
+		<h1> <img src="https://cdn6.findmyshift.co.uk/0wNi70A6E5E4MBJ0092C095H7O72A06sRKM40C3F9B5I9078KAw0Q0RN9D8E70dM2" width="50%"> </h1>
+		
 		
 	</body>
 </html>
