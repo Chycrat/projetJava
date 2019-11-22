@@ -8,11 +8,9 @@
 <title>Collaborateurs</title>
 <link rel="stylesheet" type="text/css" href="auth/page.css"/>
 </head>
-
 <body>
-
 	<c:import url="header.jsp" />
-	
+	<h1>LISTE DES COLLABORATEURS</h1>
 <table class="container">
 	<thead>
 		<tr>
@@ -27,23 +25,22 @@
 	</thead>
 	<tbody>
 		<c:forEach items ="${collab}" var="col">
-			
 			<td>${col.id_collab}</td>
 			<td>${col.nom} </td>
 			<td> ${col.prenom}</td>
 			<td> ${col.login}</td>
 			<td> ${col.role.nom_role} </td>
 			<td> ${col.email} </td>
-			
-			<td><a href="http://localhost:8080/gestionCR/removeCollab?id=${col.id_collab}">Supprimer collaborateur</a><br></td>
+			<td><a href="http://localhost:8080/gestionCR/removeCollab?id=${col.id_collab}">Supprimer collaborateur</a></td>
 			<tr></tr>
 		</c:forEach>
 	</tbody>
 	</table>
-	
+	<a href="http://localhost:8080/gestionCR/addCollab">
 	<table class="container">
-		<tbody> <td> <a href="http://localhost:8080/gestionCR/addCollab">Ajouter un collaborateur</a> </td> </tbody>
+		<tbody>  <td> <a href="http://localhost:8080/gestionCR/addCollab">Ajouter un collaborateur  </td></tbody>
 	</table>
+	</a>
 	
 </body>
 </html>
