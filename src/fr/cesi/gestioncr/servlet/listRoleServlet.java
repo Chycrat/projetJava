@@ -18,7 +18,7 @@ import fr.cesi.gestioncr.entity.Role;
 @WebServlet("/listRole")
 public class listRoleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String VUE = "/auth/listeRole.jsp";
+	private static final String VUE = "/auth/listRole.jsp";
 	private EntityManagerFactory emf;   
 
 	
