@@ -54,16 +54,19 @@ public class JpaReunion_CollabDao implements Reunion_CollabDao{
 	}
 	
 	@Override
-	public List<Collab> getCollabFromReunion(Long id_reunion) {
+	public List<Collab> getCollabFromReunion(Long id) {
 		EntityManager em = this.emf.createEntityManager();
-<<<<<<< HEAD
-		Query query = em.createQuery("SELECT nom FROM Reunion_Collab as rc INNER JOIN Collab as co ON rc.id_collab = co.id_collab WHERE rc.id_reunion = ?1");
-=======
-		Query query = em.createQuery("SELECT co FROM Reunion_Collab as rc INNER JOIN Collab as co ON rc.id_collab = co.id_collab WHERE rc.id_reunion = ?1");
->>>>>>> master
-		query.setParameter(1, id_reunion);
-		List<Collab> reunion_collab = (List<Collab>) query.getResultList();
-		return reunion_collab;
+		Query query = em.createQuery("SELECT p.collab FROM Reunion_Collab AS p WHERE id_reunion = ?1");
+		query.setParameter(1, id);
+		List<Collab> tache_reu = (List<Collab>) query.getResultList();
+		List<Collab> tache_collab = null;
+		for (Collab long1 : tache_reu) {
+			Query query2 = em.createQuery("SELECT co.nom FROM Collab AS co WHERE id_collab = ?1");
+			query2.setParameter(1, long1.getId_collab());
+			List<Collab> listCollab = (List<Collab>)query2.getResultList();
+			tache_collab.add(listCollab.get(0));
+		}
+		return tache_collab;
 	}
 
 	@Override

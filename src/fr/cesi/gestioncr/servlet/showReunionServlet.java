@@ -31,15 +31,15 @@ public class showReunionServlet extends HttpServlet {
 		JpaReunionDao myDao = new JpaReunionDao(emf);
 		JpaReunion_CollabDao ReuCol = new JpaReunion_CollabDao(emf);
 		JpaTacheDao tacheDao = new JpaTacheDao(emf);
-		System.out.println("reunionIn");
+//		System.out.println("reunionIn");
 		request.setAttribute("reunion", myDao.findReunionById(id_reu));
-		System.out.println("reunionOut");
-		System.out.println("tacheIn");
+//		System.out.println("reunionOut");
+//		System.out.println("tacheIn");
 		request.setAttribute("tache", tacheDao.getTacheFromReunion(id_reu));
-		System.out.println("tacheOut");
-		System.out.println("collabIn");
-		request.setAttribute("collab", ReuCol.getCollabFromReunion(id_reu));
-		System.out.println("collabout");
+//		System.out.println("tacheOut");
+//		System.out.println("collabIn");
+//		request.setAttribute("collab", ReuCol.getCollabFromReunion(id_reu));
+//		System.out.println("collabout");
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 	}
 
