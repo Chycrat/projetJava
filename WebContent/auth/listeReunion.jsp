@@ -19,7 +19,7 @@
 			<th><h1>Date</h1></th>
 			<th><h1>Lieu</h1></th>
 			<th><h1>Objectif</h1></th>
-			<th><h1>Compte_rendu</h1></th>
+			<th><h1>Compte rendu</h1></th>
 			<th><h1>      </h1></th>
 		</tr>
 	</thead>
@@ -27,15 +27,13 @@
 		<c:forEach items ="${reunion}" var="reu">
 			
 			<td>${reu.id_reunion}</td>
-		
 			<td>${reu.date} </td>
-		
 			<td> ${reu.lieu}</td>
-		
 			<td> ${reu.objectif}</td>
 			<td> ${reu.compte_rendu} </td>
 			
 			<td><a href="http://localhost:8080/gestionCR/removeReunion?id=${reu.id_reunion}">Supprimer réunion</a><br></td>
+			<td><a href="http://localhost:8080/gestionCR/updateReunion?id=${reu.id_reunion}">MaJ réunion</a><br></td>
 			<tr></tr>
 		</c:forEach>
 	</tbody>
