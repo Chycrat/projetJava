@@ -29,8 +29,8 @@ public class updateReunionServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JpaReunionDao myDao = new JpaReunionDao(emf);
-		Collection<Reunion> reunions = myDao.getAllReunion();
-		request.setAttribute("reunion", reunions);
+		Reunion reunion = myDao.findReunionById(Long.parseLong(request.getParameter("id")));
+		request.setAttribute("reunion", reunion);
 		this.getServletContext().getRequestDispatcher(MODIF).forward(request, response);
 	}
 
