@@ -47,7 +47,7 @@ public class JpaReunionDao implements ReunionDao{
 	@Override
 	public List<Reunion> getAllReunion() {
 		EntityManager em = this.emf.createEntityManager();
-		Query query = em.createQuery("SELECT p FROM reunion AS p");
+		Query query = em.createQuery("SELECT p FROM Reunion AS p");
 		List<Reunion> reunion = (List<Reunion>) query.getResultList();
 		return reunion;
 	}
