@@ -2,9 +2,6 @@ package fr.cesi.gestioncr.dao;
 
 import java.util.List;
 
-import fr.cesi.gestioncr.entity.Collab;
-import fr.cesi.gestioncr.entity.Reunion_Collab;
-import fr.cesi.gestioncr.entity.Tache;
 import fr.cesi.gestioncr.entity.Tache_Collab;
 
 public interface Tache_CollabDao {
