@@ -40,9 +40,10 @@
 					</br>
 	                <input type="submit" value="Ajouter" class="sansLabel" />
 	                <br />
+	                <a href="http://localhost:8080/gestionCR/listCollab">Retour</a>
 	            </fieldset>
 	          </div>
         </form>
-        <a href="http://localhost:8080/gestionCR/listCollab">Retour</a>
+        
     </body>
 </html>
