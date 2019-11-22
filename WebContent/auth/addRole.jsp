@@ -17,7 +17,7 @@
 	                <legend>Création d'un rôle</legend>
 	
 	                <label for="Nom">Nom</label>
-	                <input type="text" id="Nom" name="Nom" value="" size="20" maxlength="60" />
+	                <input type="text" id="Nom_role" name="Nom_role" value="" size="20" maxlength="60" />
 	                <input type="submit" value="Ajouter" class="sansLabel" />
 	                <br />
         			<a href="http://localhost:8080/gestionCR/listRole">Retour</a>
