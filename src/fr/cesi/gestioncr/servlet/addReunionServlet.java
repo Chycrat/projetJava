@@ -51,7 +51,7 @@ public class addReunionServlet extends HttpServlet {
 		JpaReunion_CollabDao jpaReuCol = new JpaReunion_CollabDao(emf);
 		
 		try {
-			Date dateReu = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("date"));
+			Date dateReu = new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(request.getParameter("date"));
 			String lieu = request.getParameter("lieu");
 			String objectif = request.getParameter("objectif");
 			Long id_collab = Long.parseLong(request.getParameter("id_collab"));
