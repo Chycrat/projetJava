@@ -20,7 +20,7 @@
 			<div class="form-style-5">
 				<fieldset>
 					<legend><span class="number">1</span>Création d'une réunion</legend>
-					<input type="datetime-local" name="date" placeholder="Date *" required >
+					<input type="date" id="date" name="date" value="2019-11-22" min="2019-01-01" max="2030-12-31">
 					<input type="text" name="objectif" placeholder="Objectif *" required>
 					<input type="text" name="lieu" placeholder="Lieu *" required>
 					<select name="collab" multiple required>
