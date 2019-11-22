@@ -1,5 +1,6 @@
 # projetJava
 
+HALLAY Valentin, CHRETIEN Romain, HASSED Ulrich, BROCHARD Allan
 
 Utiliser le jeu de donnée joint. script : 
 -   init_database.sql
