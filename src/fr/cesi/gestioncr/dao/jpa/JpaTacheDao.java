@@ -8,8 +8,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import fr.cesi.gestioncr.entity.Tache;
 import fr.cesi.gestioncr.dao.TacheDao;
+import fr.cesi.gestioncr.entity.Tache;
 
 public class JpaTacheDao implements TacheDao{
 
@@ -48,6 +48,15 @@ public class JpaTacheDao implements TacheDao{
 	public List<Tache> getAllTache() {
 		EntityManager em = this.emf.createEntityManager();
 		Query query = em.createQuery("SELECT p FROM tache AS p");
+		List<Tache> tache = (List<Tache>) query.getResultList();
+		return tache;
+	}
+	
+	@Override
+	public List<Tache> getTacheFromReunion(Long id_reunion) {
+		EntityManager em = this.emf.createEntityManager();
+		Query query = em.createQuery("SELECT p FROM Tache AS p WHERE reunion = ?1");
+		query.setParameter(1,id_reunion);
 		List<Tache> tache = (List<Tache>) query.getResultList();
 		return tache;
 	}

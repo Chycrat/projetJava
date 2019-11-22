@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.cesi.gestioncr.dao.jpa.JpaReunionDao;
+import fr.cesi.gestioncr.dao.jpa.JpaReunion_CollabDao;
+import fr.cesi.gestioncr.dao.jpa.JpaTacheDao;
 
 /**
  * Servlet implementation class showReunionServlet
@@ -27,7 +29,12 @@ public class showReunionServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Long id_reu = Long.parseLong(request.getParameter("id"));
 		JpaReunionDao myDao = new JpaReunionDao(emf);
+		JpaReunion_CollabDao ReuCol = new JpaReunion_CollabDao(emf);
+		JpaTacheDao tacheDao = new JpaTacheDao(emf);
+		request.setAttribute("collab", ReuCol.getCollabFromReunion(id_reu));
 		request.setAttribute("reunion", myDao.findReunionById(id_reu));
+		request.setAttribute("tache", tacheDao.getTacheFromReunion(id_reu));
+		
 		request.getRequestDispatcher(VUE).forward(request, response);
 	}
 
