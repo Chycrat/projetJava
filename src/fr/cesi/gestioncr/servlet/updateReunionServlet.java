@@ -41,7 +41,6 @@ public class updateReunionServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JpaReunionDao myDao = new JpaReunionDao(emf);
-
 		String CompteRendu = request.getParameter("cr");
 		Long id_Reu = Long.parseLong(request.getParameter("id_reunion"));
 		Reunion reunion = myDao.findReunionById(id_Reu);
