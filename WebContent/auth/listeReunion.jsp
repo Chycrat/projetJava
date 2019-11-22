@@ -32,7 +32,7 @@
 			<td> ${reu.objectif}</td>
 			<td> ${reu.compte_rendu} </td>
 			
-			<td><a href="http://localhost:8080/gestionCR/removeReunion?id=${reu.id_reunion}">Supprimer réunion</a><br></td>
+			<td><a href="http://localhost:8080/gestionCR/showReunion?id=${reu.id_reunion}">Détails</a><br></td>
 			<td><a href="http://localhost:8080/gestionCR/updateReunion?id=${reu.id_reunion}">MaJ réunion</a><br></td>
 			<tr></tr>
 		</c:forEach>
