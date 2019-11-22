@@ -35,7 +35,5 @@
 			<input type="submit" value="Création de la réunion">
 		</div>
 	</form>
-
-<br><br>
 </body>
 </html>
