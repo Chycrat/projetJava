@@ -12,7 +12,7 @@
 	<body>
 		<c:import url="header.jsp" />
 
-		TEST
+		<h1> Gestions réunions et collaborateurs </h1>
 		
 	</body>
 </html>
