@@ -6,7 +6,7 @@ Utiliser le jeu de donnée joint. script :
 -   init_database.sql
 
 
-Page de départ : login (http://localhost:8080/gestionCR/updateReunion?id=1)
+Page de départ : login (http://localhost:8080/gestionCR/login)
 Utilisé un des utilisateurs présent de base pour se connecter. peut importe le quel 
 
 Possibilitées : 
