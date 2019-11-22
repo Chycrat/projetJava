@@ -16,7 +16,7 @@ import fr.cesi.gestioncr.dao.jpa.JpaTacheDao;
 /**
  * Servlet implementation class showReunionServlet
  */
-@WebServlet("/showReunionServlet")
+@WebServlet(urlPatterns = "/showReunionServlet")
 public class showReunionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String VUE = "/auth/showReunion.jsp";
@@ -33,9 +33,8 @@ public class showReunionServlet extends HttpServlet {
 		JpaTacheDao tacheDao = new JpaTacheDao(emf);
 		request.setAttribute("collab", ReuCol.getCollabFromReunion(id_reu));
 		request.setAttribute("reunion", myDao.findReunionById(id_reu));
-		request.setAttribute("tache", tacheDao.getTacheFromReunion(id_reu));
-		
-		request.getRequestDispatcher(VUE).forward(request, response);
+		request.setAttribute("tache", tacheDao.getTacheFromReunion(id_reu));	
+		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
