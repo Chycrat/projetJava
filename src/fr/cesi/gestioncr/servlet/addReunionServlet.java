@@ -5,7 +5,15 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Properties;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.persistence.EntityManagerFactory;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,6 +36,12 @@ public class addReunionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String AJOUT = "/auth/addReunion.jsp";
 	private static final String VUE = "/listReunion";
+	
+	
+	private String username = "";
+	private String password = "";
+	
+	
 	private EntityManagerFactory emf;
        
     /**
@@ -63,11 +77,39 @@ public class addReunionServlet extends HttpServlet {
 			reunion.setObjectif(objectif);
 			jpaReu.addReunion(reunion);
 
+			Properties props = new Properties();
+			props.put("mail.smtp.auth", "true");
+			props.put("mail.smtp.starttls.enable","true");
+			props.put("mail.smtp.host","smtp.gmail.com");
+			props.put("mail.smtp.port","587");
+			Session session = Session.getInstance(props,
+					new javax.mail.Authenticator() {
+				protected PasswordAuthentication getPasswordAuthentication() {
+					return new PasswordAuthentication(username, password);
+				}
+			});
+
+
+			
 			Long id_reunion = reunion.getId_reunion();
 			for (String id_collab : list_collab) {
+				Collab colab = jpaCol.findCollabById(Long.parseLong(id_collab));
 				reunion_collab.setCollab(jpaCol.findCollabById(Long.parseLong(id_collab)));
 				reunion_collab.setReunion(jpaReu.findReunionById(id_reunion));
 				jpaReuCol.addReunion_Collab(reunion_collab);
+				try {
+					Message message = new MimeMessage(session);
+					message.setFrom(new InternetAddress(username));
+					message.setRecipients(Message.RecipientType.TO,
+							InternetAddress.parse(colab.getEmail()));
+					message.setSubject("Test email");
+					message.setText("Bonjour, ce message est un test ...");
+
+					Transport.send(message);
+					System.out.println("Message_envoye");
+				} catch (MessagingException e) {
+					throw new RuntimeException(e);
+				} 
 			}
 			
 			
