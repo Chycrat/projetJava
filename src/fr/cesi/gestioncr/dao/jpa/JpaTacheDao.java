@@ -53,12 +53,12 @@ public class JpaTacheDao implements TacheDao{
 	}
 	
 	@Override
-	public List<Tache> getTacheFromReunion(Long id_reunion) {
+	public List<Tache> getTacheFromReunion(Long id) {
 		EntityManager em = this.emf.createEntityManager();
-		Query query = em.createQuery("SELECT p FROM Tache AS p WHERE reunion = ?1");
-		query.setParameter(1,id_reunion);
-		List<Tache> tache = (List<Tache>) query.getResultList();
-		return tache;
+		Query query = em.createQuery("SELECT p FROM Tache AS p WHERE id_reunion = ?1");
+		query.setParameter(1, id);
+		List<Tache> tache_reu = (List<Tache>) query.getResultList();
+		return tache_reu;
 	}
 
 	@Override

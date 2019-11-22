@@ -22,11 +22,29 @@
 				<c:forEach items ="${collab}" var="col">
 					<text> ${col.nom} ${col.prenom}</text>
 				</c:forEach>
-				
-				<c:forEach items ="${tache}" var="tac">
-					<text> ${tac.nom_tache} ${tac.description} ${tac.deadline}</text>
-				</c:forEach>
-						
+				<table>
+					<thead>
+						<tr>
+							<th><h1>Id</h1></th>
+							<th><h1>Nom</h1></th>
+							<th><h1>Description</h1></th>
+							<th><h1>DeadLine</h1></th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items ="${taches}" var="tache">
+							<tr>
+								<td>${tache.id_tache}</td>
+							
+								<td>${tache.nom_tache} </td>
+							
+								<td> ${tache.description}</td>
+							
+								<td> ${tache.deadline}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
 			</fieldset>
 	</div>	
 </body>
