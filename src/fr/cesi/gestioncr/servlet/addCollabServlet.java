@@ -39,6 +39,7 @@ public class addCollabServlet extends HttpServlet{
 		String prenom = request.getParameter("Prenom");
 		String login = request.getParameter("Login");
 		String password = request.getParameter("Password");
+		String email = request.getParameter("email");
 		Long id_role = Long.parseLong(request.getParameter("id_role"));
 		
 		Collab collab = new Collab();
@@ -47,6 +48,7 @@ public class addCollabServlet extends HttpServlet{
 		collab.setLogin(login);
 		collab.setPassword(password);
 		collab.setRole(jpaRole.findRoleById(id_role));
+		collab.setEmail(email);
 		jpaCollab.addCollab(collab);
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 			
