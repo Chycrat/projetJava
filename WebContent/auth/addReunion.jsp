@@ -17,16 +17,16 @@
 <body>
 
 	<c:import url="header.jsp" />
-	<form name="formulaire" method="post" action="/GestionCR/Addreunion">
+	<form name="formulaire" method="post" action="/GestionCR/addReunion">
 		<div class="form-style-5">
 			<fieldset>
 				<legend><span class="number">1</span>Création d'une réunion</legend>
-				<input type="date" name="date" placeholder="Date *">
+				<input type="datetime-local" name="date" placeholder="Date *">
 				<input type="text" name="objectif" placeholder="Objectif *">
 				<input type="text" name="lieu" placeholder="Lieu *">
 				<select name="collab" multiple>
-					<c:forEach items =${collab}" var"col">
-					<option value=${col.id}> ${col.nom}</option>
+					<c:forEach items ="${collab}" var="col">
+					<option value="${col.id_collab}"> ${col.nom}</option>
 					
 					
 					</c:forEach>	 
@@ -35,7 +35,5 @@
 			<input type="submit" value="Création de la réunion">
 		</div>
 	</form>
-
-<br><br>
 </body>
 </html>
