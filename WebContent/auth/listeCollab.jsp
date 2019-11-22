@@ -18,17 +18,6 @@
 			<a href="http://localhost:8080/gestionCR/removeCollab?id=${col.id_collab}">Supprimer collaborateur</a><br>
 	</c:forEach>
 	
-	<div id="wrapper">
-		  <a href="http://localhost:8080/gestionCR/addCollab" class="my-super-cool-btn">
-		    <div class="dots-container">
-		      <div class="dot"></div>
-		      <div class="dot"></div>
-		      <div class="dot"></div>
-		      <div class="dot"></div>
-		    </div>
-		    <span>Go!</span>
-		  </a>
-	</div>
 	<a href="http://localhost:8080/gestionCR/addCollab">Ajouter un collaborateur</a>
 	
 	
