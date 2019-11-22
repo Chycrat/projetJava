@@ -19,5 +19,9 @@ public interface Reunion_CollabDao {
 	public void updateReunion_Collab(Reunion_Collab reunion_collab);
 	
 	public void removeReunion_Collab(Reunion_Collab reunion_collab);
+	
+	public List<Reunion_Collab> getCollabFromReunion();
+
+	List<Reunion_Collab> getCollabFromReunion(Long id_reunion);
 
 }
